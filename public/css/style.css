@@ -1,6 +1,3 @@
-/* Components files */ 
-@import '/rebrancy/public/css/components/buttons.css'; 
-
 /* Core files */ 
 @import '/rebrancy/public/css/core/base.css'; 
 @import '/rebrancy/public/css/core/typography.css'; 
@@ -73,6 +70,40 @@ section {
     text-align: center;
 }
 
+/* ===============================================
+    Define Margins and Paddings
+=============================================== */
+.ml-2 {
+    margin-left: .2rem;
+}
+
+.ml-3 {
+    margin-left: .3rem;
+}
+
+.ml-4 {
+    margin-left: .4rem;
+}
+
+.ml-5 {
+    margin-left: .5rem;
+}
+
+.mr-2 {
+    margin-right: .2rem;
+}
+
+.mr-3 {
+    margin-right: .3rem;
+}
+
+.mr-4 {
+    margin-right: .4rem;
+}
+
+.mr-5 {
+    margin-right: .5rem;
+}
 
 /* ===============================================
     Define Typography
@@ -153,6 +184,72 @@ h6 {
 }
 
 /* ===============================================
+    Define Custom Admin Buttons
+=============================================== */
+.btn,
+.btn:link,
+.btn:visited,
+.btn:active {  
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;    
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.btn--block {
+    width: 100%;
+}
+
+.btn-lg-primary {
+    color: #fff !important;
+    background-color: #017DC3;
+    letter-spacing: .1rem;
+    font-size: 1.4rem; 
+    font-weight: 600;
+    padding: 1rem 1.4rem;
+    box-shadow: 2px 5px 5px -7px #495057;
+    transition: all .2s;
+}
+
+.btn-lg-primary:hover {
+    background-color: #015e92 !important; 
+}
+
+
+.btn-lg-secondary {
+    color: #000 !important;
+    background-color: #ffc85c;
+    letter-spacing: .1rem;
+    font-size: 1.4rem; 
+    font-weight: 600;
+    padding: 1rem 1.4rem;
+    box-shadow: 2px 5px 5px -7px #495057;
+    transition: all .2s;
+}
+
+.btn-lg-secondary:hover {
+    filter: brightness(110%);
+}
+
+.btn-lg-light {
+    color: #017DC3 !important;
+    background-color: #fff;
+    letter-spacing: .1rem;
+    font-size: 1.4rem; 
+    font-weight: 600;
+    padding: 1rem 1.4rem;
+    box-shadow: 2px 5px 5px -7px #495057;
+    transition: all .2s;
+}
+
+.btn-lg-light:hover {
+    color: white !important;
+    background-color: #017DC3;
+}
+
+/* ===============================================
     Define Header Style
 =============================================== */
 .logo {
@@ -205,6 +302,10 @@ li:not(:last-child) {
     background-color: #ffc85c;
 }
 
+.sign-in:hover{ 
+    filter: brightness(110%);
+}
+
 .sign-in .nav-link {
     color: black;
 }
@@ -214,18 +315,21 @@ li:not(:last-child) {
     border-bottom: 2px solid transparent;
 }
 
-.sign-up {
+.sign-up { 
     font-weight: 600;
     background-color: white;
-    text-decoration: none;
+}
+
+.sign-up:hover{ 
+    background-color: #017DC3;
 }
 
 .sign-up .nav-link {
-    color: black;
+    color: #017DC3;
 }
 
 .sign-up:hover .nav-link {
-    color: black;
+    color: white;
     border-bottom: 2px solid transparent;
 }
 
