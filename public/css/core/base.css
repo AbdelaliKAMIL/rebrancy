@@ -1,0 +1,41 @@
+/* =================================================
+                    Imports
+================================================= */
+@import '../abstracts/variables.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap');
+
+/* =================================================
+                Define HTML base
+================================================= */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit
+}
+
+html {
+    box-sizing: border-box;
+    /* This defines what 1rem is */
+    font-size: 62.5%; /* 1rem = 10px; 10px/16px = 62.5% */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #495057;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 0 10rem;
+}
+
+#app {
+    min-height: 100vh;
+}

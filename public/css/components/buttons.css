@@ -1,0 +1,98 @@
+/* ===============================================
+    Define Custom Admin Buttons
+=============================================== */
+.btn,
+.btn:link,
+.btn:visited,
+.btn:active {  
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;    
+    letter-spacing: .1rem;
+    font-size: 1.1rem; 
+    font-weight: 600;
+    padding: .8rem 1.2rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.btn--block {
+    width: 100%;
+}
+
+.btn--sm {
+    font-size: 1.1rem; 
+    padding: .5rem 1rem;
+}
+
+.btn--lg {
+    font-size: 1.4rem; 
+    padding: 1rem 1.5rem;
+}
+
+.btn--primary {
+    color: #fff !important;
+    background-color: #017DC3;
+    box-shadow: 2px 5px 5px -7px #495057;
+    transition: all .2s;
+}
+
+.btn--primary:hover {
+    background-color: #015e92 !important; 
+}
+
+.btn--secondary {
+    color: #000 !important;
+    background-color: #dea520;
+    transition: all .2s;
+}
+
+.btn--secondary:hover {
+    filter: brightness(110%);
+}
+
+.btn--light {
+    color: #017DC3 !important;
+    background-color: #fff;
+    box-shadow: 2px 5px 5px -7px #495057;
+    transition: all .2s;
+}
+
+.btn--light:hover {
+    color: #fff !important;
+    background-color: #017DC3;
+}
+
+/*
+.btn--info {
+    color: var(--color-white) !important;
+    background-color: var(--color-grey);
+    border: .5px solid var(--color-grey);
+    box-shadow: 2px 5px 5px -7px var(--color-grey-25-dark);
+    transition: all .2s;
+}
+
+.btn--info:hover {
+    filter: brightness(120%);
+}
+
+.btn--light:hover {
+    color: var(--color-white) !important;
+    background-color: var(--color-grey);
+}
+
+.btn--login {
+    font-size: var(--font-size-xsmall);
+    font-weight: 700;
+    padding: .8rem 1.2rem;
+    color: var(--color-white) !important;
+    background-color: var(--color-primary);
+    box-shadow: 2px 5px 5px -7px var(--color-grey-25-dark);
+    transition: all .2s;
+}
+
+.btn--login:hover {
+    background-color: var(--color-primary-25-dark) !important;
+}
+*/

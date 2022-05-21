@@ -1,0 +1,460 @@
+/* Components files */ 
+@import '/rebrancy/public/css/components/buttons.css'; 
+
+/* Core files */ 
+@import '/rebrancy/public/css/core/base.css'; 
+@import '/rebrancy/public/css/core/typography.css'; 
+
+/* Layout files */ 
+@import '/rebrancy/public/css/layout/footer.css'; 
+@import '/rebrancy/public/css/layout/header.css'; 
+
+/* Pages files */ 
+@import '/rebrancy/public/css/pages/home/index.css'; 
+@import '/rebrancy/public/css/pages/brand/brand-list.css'; 
+
+
+/* ===============================================
+    Define Grid System
+=============================================== */
+section {
+    padding: 3rem 0rem 5rem 0;
+    margin: 0px;
+}
+
+.section-subtitle {
+    padding: 0rem 10rem;
+}
+
+.row {
+    margin: 0rem 10rem;
+}
+
+.col {
+	display: block;
+	float: left;
+	margin: 1% 0 1% 1.6%;
+}
+
+.col:first-child { margin-left: 0; } 
+
+/*  REMOVE MARGINS AS ALL GO FULL WIDTH AT 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.col { 
+		/*margin: 1% 0 1% 0%;*/
+        margin: 0;
+	}
+}
+
+/*  GRID OF TWO   ============================================================================= */
+.span-2-of-2 {
+	width: 100%;
+}
+
+.span-1-of-2 {
+	width: 49.2%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.span-2-of-2 {
+		width: 100%; 
+	}
+	.span-1-of-2 {
+		width: 100%; 
+	}
+}
+
+
+
+
+.text-center {
+    text-align: center;
+}
+
+
+/* ===============================================
+    Define Typography
+=============================================== */
+a, p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    color: #212529;
+    line-height: 180%;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 1rem 0;
+}
+
+h4, h5, h6 {
+    margin: 0;
+    padding: 0.2rem 0;
+}
+
+h1 {
+    text-transform: uppercase;
+	font-weight: 700;
+	font-size: 3.5rem;
+    line-height: 4rem;
+	font-family: "Poppins"
+}
+
+h2 {
+    text-transform: uppercase;
+	font-weight: 600;
+	font-size: 2.5rem;
+    line-height: 4rem;
+	font-family: "Poppins"
+}
+
+h3 {
+	font-weight: 600;
+	font-size: 2.2rem;
+	line-height: 4rem;
+	font-family: "Poppins"
+}
+
+h4 {
+	font-weight: 600;
+	font-size: 2rem;
+	line-height: 3rem;
+	font-family: "Poppins"
+}
+
+h5 {
+	font-size: 1.8rem;
+	line-height: 1.8rem;
+	font-family: "Poppins"
+}
+
+h6 {
+	font-size: 1.6rem;
+	line-height: 1.6rem;
+	font-family: "Poppins"
+}
+
+/* ===============================================
+    Define Text Colors
+=============================================== */
+.text-primary {
+    color: #017DC3;
+}
+
+.text-secondary {
+    color: #ffc85c;
+}
+
+.text-white {
+    color: white;
+}
+
+/* ===============================================
+    Define Header Style
+=============================================== */
+.logo {
+    height: 3rem;
+    width: auto;
+    float: left;
+    margin-top: 2rem;
+}
+
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 3rem;
+}
+
+li {
+    display: inline-block;
+}
+
+li:not(:last-child) {
+    margin-left: 4rem;
+}
+
+.nav-item {
+    margin-right: 2rem;
+    padding: 0 2rem;
+    border-radius: 5px;
+}
+
+.nav-link,
+.nav-link:link,
+.nav-link:visited {
+    font-size: 1.3rem;
+    padding:  8px 0px;
+    padding-bottom: 2px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;  
+}
+
+.nav-link:hover,
+.nav-link:active {
+    border-bottom: 2px solid #ffc85c;
+}
+
+.sign-in {
+    font-weight: 600;
+    background-color: #ffc85c;
+}
+
+.sign-in .nav-link {
+    color: black;
+}
+
+.sign-in:hover .nav-link {
+    color: black;
+    border-bottom: 2px solid transparent;
+}
+
+.sign-up {
+    font-weight: 600;
+    background-color: white;
+    text-decoration: none;
+}
+
+.sign-up .nav-link {
+    color: black;
+}
+
+.sign-up:hover .nav-link {
+    color: black;
+    border-bottom: 2px solid transparent;
+}
+
+/* ===============================================
+    Define Page Home Index
+=============================================== */
+.intro {
+    padding: 20rem 0;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("https://images.unsplash.com/photo-1494253109108-2e30c049369b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870"); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.hero-text-box {
+    padding: 0 20rem;
+    text-align: center;
+}
+
+/* ===============================================
+    Define Homepage About Style
+=============================================== */
+.about-image {
+    width: 50rem;
+}
+
+.about-image img {
+    width: 25rem;
+}
+/* ===============================================
+    Define Homepage Top Brands Style
+=============================================== */
+.top-brands {
+    background-color: #fcf6e9 !important;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+    margin: 4rem 5vw;
+    padding: 0;
+    list-style-type: none;
+}
+
+.card {
+    position: relative;
+    display: block;
+    height: 100%;  
+    border-radius: calc(40 * 1px);
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.card__image {      
+    width: 100%;
+    height: 30rem;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+.card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;      
+    border-radius: calc(40 * 1px);    
+    background-color: #fff;      
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+    transform: translateY(0);
+}
+
+.card__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 1em;
+    border-radius: calc(40 * 1px) 0 0 0;    
+    background-color: #fff;
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+}
+
+.card__arc {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;      
+    z-index: 1;
+}
+
+.card__arc path {
+    fill: #fff;
+    d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}       
+
+.card:hover .card__header {
+    transform: translateY(0);
+}
+
+.card__thumb {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;      
+    border-radius: 50%;      
+}
+
+.card__title {
+    color: #017DC3;
+}
+
+.card__tagline {
+    display: block;
+    margin: 0.5rem 0;
+    font-family: "MockFlowFont";  
+    font-size: .8em; 
+}
+
+.card__status {
+    font-size: 1.3rem;
+    color: #013e61;
+}
+
+.card__description {
+    padding: 0 2em 2em;
+    margin: 0;
+    font-family: "MockFlowFont";   
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+/* ===============================================
+    Define Homepage Top Influences Style
+=============================================== */
+.top-influencers {
+    background-color: #017DC3;
+    z-index: -2;
+}
+
+.box-influencers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+    margin: 4rem 5vw;
+    padding: 0;
+}
+
+.card-influencer {
+    position: relative;
+    width: 28rem;
+    height: 32rem;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+
+.card-influencer:before,
+.card-influencer:after {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background: #fff;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.card-influencer:hover:before {
+    transform: rotate(20deg);
+    box-shadow: 0 2px 20px rgba(0,0,0,.2);
+}
+
+.card-influencer:hover:after {
+    transform: rotate(10deg);
+    box-shadow: 0 2px 20px rgba(0,0,0,.2);
+}
+
+.influencer-photo {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+    background: #222;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.card-influencer:hover .influencer-photo {
+    bottom: 80px;
+}
+
+.influencer-photo img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.influencer-details {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 1.3rem;
+    height: 60px;
+    text-align: center;
+}
+
+.influencer-details span {
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: #a67c18;
+    display: block;
+    margin-top: 1rem;
+} 
