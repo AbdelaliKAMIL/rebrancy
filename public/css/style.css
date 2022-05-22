@@ -14,9 +14,10 @@
 /* ===============================================
     Define Grid System
 =============================================== */
-section {
-    padding: 3rem 0rem 5rem 0;
-    margin: 0px;
+.section {
+    padding: 5rem 0rem 8rem 0;
+    clear: both;
+	height: auto;
 }
 
 .section-subtitle {
@@ -24,7 +25,19 @@ section {
 }
 
 .row {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
     margin: 0rem 10rem;
+}
+
+.row:before,
+.row:after {
+    content:"";
+    display:table;
+	margin: 0 20rem;
+}
+
+.row:after {
+    clear:both;
 }
 
 .col {
@@ -217,7 +230,6 @@ h6 {
     background-color: #015e92 !important; 
 }
 
-
 .btn-lg-secondary {
     color: #000 !important;
     background-color: #ffc85c;
@@ -249,14 +261,47 @@ h6 {
     background-color: #017DC3;
 }
 
+.btn-secondary {
+    color: #000 !important;
+    background-color: #ffc85c;
+    letter-spacing: .1rem;
+    font-size: 1.2rem; 
+    font-weight: 600;
+    padding: 1rem 1.4rem;
+    box-shadow: 2px 5px 5px -7px #495057;
+    transition: all .2s;
+}
+
+.btn-secondary:hover {
+    filter: brightness(110%);
+}
+
+.btn-light {
+    color: #017DC3 !important;
+    background-color: #fff;
+    letter-spacing: .1rem;
+    font-size: 1.2rem; 
+    font-weight: 600;
+    padding: 1rem 1.4rem;
+    box-shadow: 2px 5px 5px -7px #495057;
+    transition: all .2s;
+}
+
+.btn-light:hover {
+    color: white !important;
+    background-color: #017DC3;
+}
+
 /* ===============================================
     Define Header Style
 =============================================== */
 .logo {
-    height: 3rem;
-    width: auto;
     float: left;
     margin-top: 2rem;
+}
+
+.logo img {
+    width: 20rem;
 }
 
 .main-nav {
@@ -265,17 +310,17 @@ h6 {
     margin-top: 3rem;
 }
 
-li {
+.main-nav li {
     display: inline-block;
 }
 
-li:not(:last-child) {
+.main-nav li:not(:last-child) {
     margin-left: 4rem;
 }
 
 .nav-item {
     margin-right: 2rem;
-    padding: 0 2rem;
+    padding: 0 1rem;
     border-radius: 5px;
 }
 
@@ -353,27 +398,38 @@ li:not(:last-child) {
 /* ===============================================
     Define Homepage About Style
 =============================================== */
+.about-container {
+    display: grid;
+    grid-template-columns: 45rem 45rem;
+    justify-content: center;
+    gap: 4rem;
+}
+
 .about-image {
-    width: 50rem;
+    text-align: right;
 }
 
 .about-image img {
-    width: 25rem;
+    width: 40rem;
+}
+
+.about-btn {
+    margin-top: 3rem;
 }
 /* ===============================================
     Define Homepage Top Brands Style
 =============================================== */
 .top-brands {
-    background-color: #fcf6e9 !important;
+    background-color: #00253A !important;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
     margin: 4rem 5vw;
     padding: 0;
-    list-style-type: none;
+    list-style: none;
 }
 
 .card {
@@ -475,11 +531,6 @@ li:not(:last-child) {
 /* ===============================================
     Define Homepage Top Influences Style
 =============================================== */
-.top-influencers {
-    background-color: #017DC3;
-    z-index: -2;
-}
-
 .box-influencers {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));

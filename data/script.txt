@@ -1,0 +1,61 @@
+CREATE TABLE brands (
+id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(255) UNIQUE NOT NULL,
+description TEXT,
+industry VARCHAR(255),
+logo TEXT,
+image TEXT,
+turnover BIGINT,
+is_active BINARY DEFAULT 0,
+PRIMARY KEY (id)
+);
+
+INSERT INTO brands (name, description, industry, logo, image, turnover, is_active)
+VALUES ("Coca-Cola",
+"La société Coca-Cola, officiellement nommée The Coca-Cola Company of Atlanta, est une entreprise américaine spécialisée dans les boissons non alcoolisées. Il s'agit de l'une des plus importantes sociétés américaines dont la notoriété et la popularité sont mondiales.",
+"Boissons",
+"https://www.svgrepo.com/show/303132/coca-cola-logo.svg",
+"https://images.unsplash.com/photo-1585898643467-fe395370b450?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGNvY2ElMjBjb2xhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600",
+38660000000,
+1),
+
+("Adidas",
+"Adidas (anciennement Gebrüder Dassler Schuhfabrik) est une firme allemande fondée en 1949 par Adolf Dassler, spécialisée dans la fabrication d'articles de sport, basée à Herzogenaurach en Allemagne.",
+"Articles de sport",
+"http://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c4f2.png",
+"https://images.unsplash.com/photo-1566796201787-b034938b4396?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464",
+21230000000,
+1),
+
+("KFC",
+"KFC (Kentucky Fried Chicken), PFK (Poulet Frit Kentucky) au Québec, est une chaîne de restauration rapide américaine.",
+"Restauration rapide",
+"https://www.pngplay.com/wp-content/uploads/9/KFC-Logo-PNG-Background.png",
+"https://images.unsplash.com/photo-1637851682487-fa13fce5150f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGtmY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600",
+38000000000,
+1),
+
+("Mercedes",
+"KFC (Kentucky Fried Chicken), PFK (Poulet Frit Kentucky) au Québec, est une chaîne de restauration rapide américaine.",
+"Restauration rapide",
+"https://www.pngplay.com/wp-content/uploads/9/KFC-Logo-PNG-Background.png",
+"https://images.unsplash.com/photo-1637851682487-fa13fce5150f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGtmY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600",
+38000000000,
+1),
+
+("Starbucks",
+"Starbucks Corporation est une chaîne de cafés américaine fondée en 1971. En partie en franchise, il s'agit de la plus grande chaîne de ce genre dans le monde, avec 32 180 établissements implantés dans 78 pays, dont 18 235 sur le continent Américain.",
+"Café et thé (distribution et restauration)",
+"https://www.designbust.com/download/1031/png/starbucks_logo_transparent512.png",
+"https://images.unsplash.com/photo-1548364538-60b952c308b9?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJyYW5kc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600",
+26509000000,
+1),
+
+("Ray-Ban",
+"Ray-Ban est un fabricant de lunettes de soleil et de lunettes de vue d'origine américaine, fondé en 1937 par Bausch & Lomb et appartenant au franco-italien EssilorLuxottica. En 1999, Bausch & Lomb vend la marque au groupe Luxottica.",
+"Opticien",
+"https://cdn.freebiesupply.com/logos/thumbs/2x/ray-ban-logo.png",
+"https://images.unsplash.com/photo-1563170423-741125661ae8?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzl8fHJheWJhbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600",
+6090000000,
+1)
+;
