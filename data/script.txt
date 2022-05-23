@@ -1,61 +1,122 @@
-CREATE TABLE brands (
+CREATE TABLE IF NOT EXISTS users (
 id INT NOT NULL AUTO_INCREMENT,
-name VARCHAR(255) UNIQUE NOT NULL,
-description TEXT,
-industry VARCHAR(255),
-logo TEXT,
-image TEXT,
-turnover BIGINT,
+email VARCHAR(255) UNIQUE NOT NULL,
+password VARCHAR(255),
+role VARCHAR(255),
 is_active BINARY DEFAULT 0,
 PRIMARY KEY (id)
 );
 
-INSERT INTO brands (name, description, industry, logo, image, turnover, is_active)
+INSERT INTO USERS (email, password, role, is_active)
+VALUES ("brand01@gmail.com", "brand01", "BRAND", 1),
+("brand02@gmail.com", "brand02", "BRAND", 1),
+("brand03@gmail.com", "brand03", "BRAND", 1),
+("brand04@gmail.com", "brand04", "BRAND", 1),
+("brand05@gmail.com", "brand05", "BRAND", 1),
+("brand06@gmail.com", "brand06", "BRAND", 1),
+("brand07@gmail.com", "brand07", "BRAND", 1),
+("brand08@gmail.com", "brand08", "BRAND", 1),
+("brand09@gmail.com", "brand09", "BRAND", 1),
+("brand10@gmail.com", "brand10", "BRAND", 1),
+("brand11@gmail.com", "brand11", "BRAND", 1),
+("brand12@gmail.com", "brand12", "BRAND", 1),
+("influencer01@gmail.com", "influencer01", "INFLUENCER", 1),
+("influencer02@gmail.com", "influencer02", "INFLUENCER", 1),
+("influencer03@gmail.com", "influencer03", "INFLUENCER", 1),
+("influencer04@gmail.com", "influencer04", "INFLUENCER", 1),
+("influencer05@gmail.com", "influencer05", "INFLUENCER", 1),
+("influencer06@gmail.com", "influencer06", "INFLUENCER", 1),
+("influencer07@gmail.com", "influencer07", "INFLUENCER", 1),
+("influencer08@gmail.com", "influencer08", "INFLUENCER", 1),
+("influencer09@gmail.com", "influencer09", "INFLUENCER", 1),
+("influencer10@gmail.com", "influencer10", "INFLUENCER", 1),
+("influencer11@gmail.com", "influencer11", "INFLUENCER", 1),
+("influencer12@gmail.com", "influencer12", "INFLUENCER", 1);
+
+CREATE TABLE IF NOT EXISTS brands (
+id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(255) UNIQUE NOT NULL,
+description TEXT,
+industry VARCHAR(255),
+logo VARCHAR(255),
+image VARCHAR(255),
+turnover BIGINT,
+user_id INT NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+INSERT INTO brands (name, description, industry, logo, image, turnover, user_id)
 VALUES ("Coca-Cola",
 "La société Coca-Cola, officiellement nommée The Coca-Cola Company of Atlanta, est une entreprise américaine spécialisée dans les boissons non alcoolisées. Il s'agit de l'une des plus importantes sociétés américaines dont la notoriété et la popularité sont mondiales.",
 "Boissons",
-"https://www.svgrepo.com/show/303132/coca-cola-logo.svg",
-"https://images.unsplash.com/photo-1585898643467-fe395370b450?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGNvY2ElMjBjb2xhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600",
+"coca-cola-logo.png",
+"coca-cola.jfif",
 38660000000,
 1),
 
 ("Adidas",
 "Adidas (anciennement Gebrüder Dassler Schuhfabrik) est une firme allemande fondée en 1949 par Adolf Dassler, spécialisée dans la fabrication d'articles de sport, basée à Herzogenaurach en Allemagne.",
 "Articles de sport",
-"http://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c4f2.png",
-"https://images.unsplash.com/photo-1566796201787-b034938b4396?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464",
+"adidas-logo.png",
+"adidas.jfif",
 21230000000,
-1),
+2),
 
 ("KFC",
 "KFC (Kentucky Fried Chicken), PFK (Poulet Frit Kentucky) au Québec, est une chaîne de restauration rapide américaine.",
 "Restauration rapide",
-"https://www.pngplay.com/wp-content/uploads/9/KFC-Logo-PNG-Background.png",
-"https://images.unsplash.com/photo-1637851682487-fa13fce5150f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGtmY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600",
+"kfc-logo.png",
+"kfc.jfif",
 38000000000,
-1),
+3),
 
 ("Mercedes",
-"KFC (Kentucky Fried Chicken), PFK (Poulet Frit Kentucky) au Québec, est une chaîne de restauration rapide américaine.",
-"Restauration rapide",
-"https://www.pngplay.com/wp-content/uploads/9/KFC-Logo-PNG-Background.png",
-"https://images.unsplash.com/photo-1637851682487-fa13fce5150f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGtmY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600",
-38000000000,
-1),
+"Mercedes-Benz est un constructeur allemand d'automobiles (modèles premium, de sport et de luxe), de camions, d'autocars et d'autobus indépendant fondé en 1926.",
+"Automobile",
+"mercedes-logo.png",
+"mercedes.png",
+169000000000,
+4),
 
 ("Starbucks",
 "Starbucks Corporation est une chaîne de cafés américaine fondée en 1971. En partie en franchise, il s'agit de la plus grande chaîne de ce genre dans le monde, avec 32 180 établissements implantés dans 78 pays, dont 18 235 sur le continent Américain.",
 "Café et thé (distribution et restauration)",
-"https://www.designbust.com/download/1031/png/starbucks_logo_transparent512.png",
-"https://images.unsplash.com/photo-1548364538-60b952c308b9?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJyYW5kc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600",
+"starbucks-logo.png",
+"starbucks.jfiff",
 26509000000,
-1),
+5),
 
 ("Ray-Ban",
 "Ray-Ban est un fabricant de lunettes de soleil et de lunettes de vue d'origine américaine, fondé en 1937 par Bausch & Lomb et appartenant au franco-italien EssilorLuxottica. En 1999, Bausch & Lomb vend la marque au groupe Luxottica.",
 "Opticien",
-"https://cdn.freebiesupply.com/logos/thumbs/2x/ray-ban-logo.png",
-"https://images.unsplash.com/photo-1563170423-741125661ae8?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzl8fHJheWJhbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600",
+"ray-ban-logo.png",
+"ray-ban.jfif",
 6090000000,
-1)
+6)
 ;
+
+CREATE TABLE IF NOT EXISTS influencers (
+id INT NOT NULL AUTO_INCREMENT,
+firstname VARCHAR(255) NOT NULL,
+lastname VARCHAR(255) NOT NULL,
+nickname VARCHAR(255) NOT NULL,
+age INT,
+function VARCHAR(255),
+photo VARCHAR(255),
+facebook VARCHAR(255),
+instagram VARCHAR(255),
+youtube VARCHAR(255),
+snapshot VARCHAR(255),
+user_id INT NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+INSERT INTO influencers (firstname, lastname, nickname, age, function, photo, facebook, instagram, youtube, snapshot, user_id)
+VALUES ("Jamie", "Oliver", "Jammy", 24, "Digital Marketing Creator", "jamieoliver.jpg", "@jamieoliver", "@jamieoliver", "@jamieoliver", "@jamieoliver", 13),
+("David", "Chang", "Davi", 30, "Content Creative Marketer", "davidchang.jpg", "@davidchang", "@davidchang", "@davidchang", "@davidchang", 14),
+("Chiara", "Ferragni", "Ragni", 27, "Graphic Designer Manager", "chiaraferragni.jpg", "@chiaraferragni", "@chiaraferragni", "@chiaraferragni", "@chiaraferragni", 15),
+("Alexa", "Chung", "Lexa", 23, "Film Maker", "alexachung.jpg", "@alexachung", "@alexachung", "@alexachung", "@alexachung", 16),
+("Murad", "Osmann", "Moro", 26, "Brand Advertising Manager", "muradosmann.jpg", "@muradosmann", "@muradosmann", "@muradosmann", "@muradosmann", 17),
+("Jimmy", "Chin", "Jichi", 25, "Director & Producer", "jimmychin.jpg", "@jimmychin", "@jimmychin", "@jimmychin", "@jimmychin", 18);

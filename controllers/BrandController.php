@@ -1,4 +1,5 @@
 <?php
+include('./models/Brand.php');
 
 class BrandController
 {
@@ -11,9 +12,8 @@ class BrandController
 
     public function getFewBrands()
     {
-        $stmt = Database::connect()->prepare('SELECT * FROM brands LIMIT 6');
-        $stmt->execute();
-        $brands = $stmt->fetchAll();
+        $brands = Brand::getFew();
+
         return $brands;
     }
 
