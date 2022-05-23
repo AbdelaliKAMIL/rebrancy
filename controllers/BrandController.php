@@ -1,27 +1,70 @@
 <?php
-// Chargement des classes
-require_once('../models/BrandManager.php');
 
-function showBrands()
+class BrandController
 {
-    $brandManager = new BrandManager(); // Création d'un objet
-    $brands = $brandManager->getBrands(); // Appel d'une fonction de cet objet
+    public function getAllBrands()
+    {
+        $brands = Brand::getAll();
 
-    require('brand/brandList.php');
-}
+        return $brands;
+    }
 
-function brandTopList()
-{
-    $brandManager = new BrandManager();
-    $brands = $brandManager->getTopBrands();
+    public function getFewBrands()
+    {
+        $stmt = Database::connect()->prepare('SELECT * FROM brands LIMIT 6');
+        $stmt->execute();
+        $brands = $stmt->fetchAll();
+        return $brands;
+    }
 
-    require('home/index.php');
-}
+    public function getBrand($id)
+    {
+        $brand = Brand::getById($id);
 
-function brand()
-{
-    $brandManager = new BrandManager();
-    $brand = $brandManager->getBrandById($_GET['id']);
+        return $brand;
+    }
 
-    require('brand/brandDetail.php');
+    public function addBrand()
+    {
+        if (isset($_POST['submit'])) {
+            $data = array(
+                'name' => $_POST['name'],
+                'description' => $_POST['description'],
+                'industry' => $_POST['industry'],
+                'logo' => $_POST['logo'],
+                'image' => $_POST['image'],
+                'turnover' => $_POST['turnover']
+            );
+
+            $isCreatedSuccessfully = Brand::create($data);
+
+            if ($isCreatedSuccessfully) {
+                header('location:http://localhost/Rebrancy2/');
+            } else {
+                echo 'Erreur lors de la création de la marque.';
+            }
+        }
+    }
+
+    public function editBrand()
+    {
+        if (isset($_POST['submit'])) {
+            $data = array(
+                'name' => $_POST['name'],
+                'description' => $_POST['description'],
+                'industry' => $_POST['industry'],
+                'logo' => $_POST['logo'],
+                'image' => $_POST['image'],
+                'turnover' => $_POST['turnover']
+            );
+
+            $isUpdatedSuccessfully = Brand::update($data);
+
+            if ($isUpdatedSuccessfully) {
+                header('location:http://localhost/Rebrancy2/');
+            } else {
+                echo 'Erreur lors de la modification de la marque.';
+            }
+        }
+    }
 }
