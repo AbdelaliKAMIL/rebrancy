@@ -1,4 +1,5 @@
 <?php
+
 class Database
 {
     static public function connect()

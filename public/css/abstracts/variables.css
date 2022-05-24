@@ -2,7 +2,7 @@
     /* Primary colors */
     --color-primary-50-light: #63c6fe;
     --color-primary-25-light: #15aafe;
-    --color-primary: #017DC3;
+    --color-primary: #fff;
     --color-primary-25-dark: #015e92;
     --color-primary-50-dark: #013e61;
     
@@ -27,7 +27,7 @@
     --color-grey-50-dark: #212529;
 
     /* Basic colors */
-    --color-white: #ffffff;
+    --color-white: #0000;
     --color-black: #000000;
 
     /* Fonts size */

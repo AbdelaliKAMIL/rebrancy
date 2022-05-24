@@ -17,8 +17,8 @@ $influencers = $influencerController->getFewInfluencers();
         <div class="col span-2-of-2">
             <div class="hero-text-box">
                 <h1 style="margin-bottom: 4rem; color: white">Un écosystème où les marques et les influenceurs se rencontrent</h1>
-                <a class="btn btn-lg-light" href="#">Je suis une marque</a>
-                <a class="btn btn-lg-secondary ml-5" href="<?php echo 'http://localhost/rebrancy/'; ?>sign-up">Je suis un influenceur</a>
+                <a class="btn btn-lg-light" href="<?php echo 'http://localhost/rebrancy/'; ?>sign-up-brand">>Je suis une marque</a>
+                <a class="btn btn-lg-secondary ml-5" href="<?php echo 'http://localhost/rebrancy/'; ?>sign-up-influencer">Je suis un influenceur</a>
             </div>
         </div>
     </div>
