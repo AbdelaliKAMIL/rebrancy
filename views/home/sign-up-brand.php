@@ -1,4 +1,4 @@
-<?php $title = 'Rebrancy - Sign up'; ?>
+<?php $title = "Rebrancy - S'inscrire"; ?>
 
 <?php ob_start(); ?>
 <?php $header = ob_get_clean(); ?>
@@ -29,7 +29,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="textarea_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
                                 <textarea name="description" rows="4" style="width: 100%" placeholder="Décrire votre marque ici ..."></textarea>
                             </div>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>

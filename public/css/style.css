@@ -1,15 +1,14 @@
-/* Core files */ 
-@import '/rebrancy/public/css/core/base.css'; 
-@import '/rebrancy/public/css/core/typography.css'; 
+/* Core files */
+@import "/rebrancy/public/css/core/base.css";
+@import "/rebrancy/public/css/core/typography.css";
 
-/* Layout files */ 
-@import '/rebrancy/public/css/layout/footer.css'; 
-@import '/rebrancy/public/css/layout/header.css'; 
+/* Layout files */
+@import "/rebrancy/public/css/layout/footer.css";
+@import "/rebrancy/public/css/layout/header.css";
 
-/* Pages files */ 
-@import '/rebrancy/public/css/pages/home/index.css'; 
-@import '/rebrancy/public/css/pages/brand/brand-list.css'; 
-
+/* Pages files */
+@import "/rebrancy/public/css/pages/home/index.css";
+@import "/rebrancy/public/css/pages/brand/brand-list.css";
 
 /* ===============================================
     Define Grid System
@@ -17,7 +16,7 @@
 .section {
     padding: 5rem 0rem 8rem 0;
     clear: both;
-	height: auto;
+    height: auto;
 }
 
 .section-subtitle {
@@ -31,53 +30,52 @@
 
 .row:before,
 .row:after {
-    content:"";
-    display:table;
-	margin: 0 20rem;
+    content: "";
+    display: table;
+    margin: 0 20rem;
 }
 
 .row:after {
-    clear:both;
+    clear: both;
 }
 
 .col {
-	display: block;
-	float: left;
-	margin: 1% 0 1% 1.6%;
+    display: block;
+    float: left;
+    margin: 1% 0 1% 1.6%;
 }
 
-.col:first-child { margin-left: 0; } 
+.col:first-child {
+    margin-left: 0;
+}
 
 /*  REMOVE MARGINS AS ALL GO FULL WIDTH AT 480 PIXELS */
 @media only screen and (max-width: 480px) {
-	.col { 
-		/*margin: 1% 0 1% 0%;*/
+    .col {
+        /*margin: 1% 0 1% 0%;*/
         margin: 0;
-	}
+    }
 }
 
 /*  GRID OF TWO   ============================================================================= */
 .span-2-of-2 {
-	width: 100%;
+    width: 100%;
 }
 
 .span-1-of-2 {
-	width: 49.2%;
+    width: 49.2%;
 }
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
 
 @media only screen and (max-width: 480px) {
-	.span-2-of-2 {
-		width: 100%; 
-	}
-	.span-1-of-2 {
-		width: 100%; 
-	}
+    .span-2-of-2 {
+        width: 100%;
+    }
+    .span-1-of-2 {
+        width: 100%;
+    }
 }
-
-
-
 
 .text-center {
     text-align: center;
@@ -87,41 +85,42 @@
     Define Margins and Paddings
 =============================================== */
 .ml-2 {
-    margin-left: .2rem;
+    margin-left: 0.2rem;
 }
 
 .ml-3 {
-    margin-left: .3rem;
+    margin-left: 0.3rem;
 }
 
 .ml-4 {
-    margin-left: .4rem;
+    margin-left: 0.4rem;
 }
 
 .ml-5 {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
 }
 
 .mr-2 {
-    margin-right: .2rem;
+    margin-right: 0.2rem;
 }
 
 .mr-3 {
-    margin-right: .3rem;
+    margin-right: 0.3rem;
 }
 
 .mr-4 {
-    margin-right: .4rem;
+    margin-right: 0.4rem;
 }
 
 .mr-5 {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
 }
 
 /* ===============================================
     Define Typography
 =============================================== */
-a, p {
+a,
+p {
     margin: 0;
     padding: 0;
     font-size: 1.6rem;
@@ -129,63 +128,67 @@ a, p {
     line-height: 180%;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     margin: 0;
     padding: 1rem 0;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
     margin: 0;
     padding: 0.2rem 0;
 }
 
 h1 {
     text-transform: uppercase;
-	font-weight: 700;
-	font-size: 3.5rem;
+    font-weight: 700;
+    font-size: 3.5rem;
     line-height: 4rem;
-	font-family: "Poppins"
+    font-family: "Poppins";
 }
 
 h2 {
     text-transform: uppercase;
-	font-weight: 600;
-	font-size: 2.5rem;
+    font-weight: 600;
+    font-size: 2.5rem;
     line-height: 4rem;
-	font-family: "Poppins"
+    font-family: "Poppins";
 }
 
 h3 {
-	font-weight: 600;
-	font-size: 2.2rem;
-	line-height: 4rem;
-	font-family: "Poppins"
+    font-weight: 600;
+    font-size: 2.2rem;
+    line-height: 4rem;
+    font-family: "Poppins";
 }
 
 h4 {
-	font-weight: 600;
-	font-size: 2rem;
-	line-height: 3rem;
-	font-family: "Poppins"
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 3rem;
+    font-family: "Poppins";
 }
 
 h5 {
-	font-size: 1.8rem;
-	line-height: 1.8rem;
-	font-family: "Poppins"
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    font-family: "Poppins";
 }
 
 h6 {
-	font-size: 1.6rem;
-	line-height: 1.6rem;
-	font-family: "Poppins"
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-family: "Poppins";
 }
 
 /* ===============================================
     Define Text Colors
 =============================================== */
 .text-primary {
-    color: #017DC3;
+    color: #017dc3;
 }
 
 .text-secondary {
@@ -202,10 +205,10 @@ h6 {
 .btn,
 .btn:link,
 .btn:visited,
-.btn:active {  
+.btn:active {
     text-decoration: none;
     text-transform: uppercase;
-    cursor: pointer;    
+    cursor: pointer;
     border: none;
     outline: none;
     border-radius: 5px;
@@ -217,28 +220,28 @@ h6 {
 
 .btn-lg-primary {
     color: #fff !important;
-    background-color: #017DC3;
-    letter-spacing: .1rem;
-    font-size: 1.4rem; 
+    background-color: #017dc3;
+    letter-spacing: 0.1rem;
+    font-size: 1.4rem;
     font-weight: 600;
     padding: 1rem 1.4rem;
     box-shadow: 2px 5px 5px -7px #495057;
-    transition: all .2s;
+    transition: all 0.2s;
 }
 
 .btn-lg-primary:hover {
-    background-color: #015e92 !important; 
+    background-color: #015e92 !important;
 }
 
 .btn-lg-secondary {
     color: #000 !important;
     background-color: #ffc85c;
-    letter-spacing: .1rem;
-    font-size: 1.4rem; 
+    letter-spacing: 0.1rem;
+    font-size: 1.4rem;
     font-weight: 600;
     padding: 1rem 1.4rem;
     box-shadow: 2px 5px 5px -7px #495057;
-    transition: all .2s;
+    transition: all 0.2s;
 }
 
 .btn-lg-secondary:hover {
@@ -246,30 +249,30 @@ h6 {
 }
 
 .btn-lg-light {
-    color: #017DC3 !important;
+    color: #017dc3 !important;
     background-color: #fff;
-    letter-spacing: .1rem;
-    font-size: 1.4rem; 
+    letter-spacing: 0.1rem;
+    font-size: 1.4rem;
     font-weight: 600;
     padding: 1rem 1.4rem;
     box-shadow: 2px 5px 5px -7px #495057;
-    transition: all .2s;
+    transition: all 0.2s;
 }
 
 .btn-lg-light:hover {
     color: white !important;
-    background-color: #017DC3;
+    background-color: #017dc3;
 }
 
 .btn-secondary {
     color: #000 !important;
     background-color: #ffc85c;
-    letter-spacing: .1rem;
-    font-size: 1.2rem; 
+    letter-spacing: 0.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     padding: 1rem 1.4rem;
     box-shadow: 2px 5px 5px -7px #495057;
-    transition: all .2s;
+    transition: all 0.2s;
 }
 
 .btn-secondary:hover {
@@ -277,24 +280,29 @@ h6 {
 }
 
 .btn-light {
-    color: #017DC3 !important;
+    color: #017dc3 !important;
     background-color: #fff;
-    letter-spacing: .1rem;
-    font-size: 1.2rem; 
+    letter-spacing: 0.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     padding: 1rem 1.4rem;
     box-shadow: 2px 5px 5px -7px #495057;
-    transition: all .2s;
+    transition: all 0.2s;
 }
 
 .btn-light:hover {
     color: white !important;
-    background-color: #017DC3;
+    background-color: #017dc3;
 }
 
 /* ===============================================
     Define Header Style
 =============================================== */
+header {
+    position: absolute;
+    width: 100%;
+}
+
 .logo {
     float: left;
     margin-top: 2rem;
@@ -328,13 +336,13 @@ h6 {
 .nav-link:link,
 .nav-link:visited {
     font-size: 1.3rem;
-    padding:  8px 0px;
+    padding: 8px 0px;
     padding-bottom: 2px;
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     border-bottom: 2px solid transparent;
-    transition: border-bottom 0.2s;  
+    transition: border-bottom 0.2s;
 }
 
 .nav-link:hover,
@@ -347,7 +355,7 @@ h6 {
     background-color: #ffc85c;
 }
 
-.sign-in:hover{ 
+.sign-in:hover {
     filter: brightness(110%);
 }
 
@@ -360,17 +368,17 @@ h6 {
     border-bottom: 2px solid transparent;
 }
 
-.sign-up { 
+.sign-up {
     font-weight: 600;
     background-color: white;
 }
 
-.sign-up:hover{ 
-    background-color: #017DC3;
+.sign-up:hover {
+    background-color: #017dc3;
 }
 
 .sign-up .nav-link {
-    color: #017DC3;
+    color: #017dc3;
 }
 
 .sign-up:hover .nav-link {
@@ -379,13 +387,24 @@ h6 {
 }
 
 /* ===============================================
-    Define Sign-up Style
+    Define Sign-up & Sign-in Style
 =============================================== */
 .section-sign-up {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("https://images.unsplash.com/photo-1557804506-669a67965ba0?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774"); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("https://images.unsplash.com/photo-1557804506-669a67965ba0?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+.section-sign-in {
+    padding: 13rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
 }
 
 .form_wrapper {
@@ -453,7 +472,11 @@ h6 {
 .form_wrapper .textarea_field > span > i {
     padding-top: 10px;
 }
-.form_wrapper textarea, .form_wrapper input[type="text"], .form_wrapper input[type="email"], .form_wrapper input[type="password"],.form_wrapper input[type="number"] {
+.form_wrapper textarea,
+.form_wrapper input[type="text"],
+.form_wrapper input[type="email"],
+.form_wrapper input[type="password"],
+.form_wrapper input[type="number"] {
     width: 100%;
     padding: 8px 10px 9px 35px;
     height: 35px;
@@ -465,18 +488,24 @@ h6 {
     -ms-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-.form_wrapper textarea:hover, .form_wrapper input[type="text"]:hover, .form_wrapper input[type="email"]:hover, .form_wrapper input[type="password"]:hover {
+.form_wrapper textarea:hover,
+.form_wrapper input[type="text"]:hover,
+.form_wrapper input[type="email"]:hover,
+.form_wrapper input[type="password"]:hover {
     background: #fafafa;
 }
-.form_wrapper textarea:focus, .form_wrapper input[type="text"]:focus, .form_wrapper input[type="email"]:focus, .form_wrapper input[type="password"]:focus {
+.form_wrapper textarea:focus,
+.form_wrapper input[type="text"]:focus,
+.form_wrapper input[type="email"]:focus,
+.form_wrapper input[type="password"]:focus {
     -webkit-box-shadow: 0 0 2px 1px rgba(255, 200, 92, 0.5);
     -moz-box-shadow: 0 0 2px 1px rgba(255, 200, 92, 0.5);
     box-shadow: 0 0 2px 1px rgba(255, 200, 92, 0.5);
-    border: 1px solid #017DC3;
+    border: 1px solid #017dc3;
     background: #fafafa;
 }
 .form_wrapper input[type="submit"] {
-    background: #017DC3;
+    background: #017dc3;
     height: 35px;
     line-height: 35px;
     width: 100%;
@@ -504,10 +533,11 @@ h6 {
     border-left: 1px solid #ccc;
 }
 .credit {
+    font-size: 1.4rem;
     position: relative;
     z-index: 1;
     text-align: center;
-    color: #017DC3;
+    color: #017dc3;
 }
 .credit a {
     color: #ffc85c;
@@ -515,7 +545,7 @@ h6 {
 
 .fa {
     font-size: 1.6rem;
-    color: #017DC3;
+    color: #017dc3;
 }
 
 @-webkit-keyframes expand {
@@ -606,7 +636,7 @@ h6 {
 }
 @media (max-width: 600px) {
     .form_wrapper .col_half {
-        width: 100%; 
+        width: 100%;
         float: none;
     }
     .bottom_row .col_half {
@@ -626,7 +656,8 @@ h6 {
 =============================================== */
 .intro {
     padding: 20rem 0;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("https://images.unsplash.com/photo-1494253109108-2e30c049369b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870"); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("https://images.unsplash.com/photo-1494253109108-2e30c049369b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870");
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -638,9 +669,33 @@ h6 {
     text-align: center;
 }
 
+.brands-intro {
+    padding: 20rem 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("https://images.unsplash.com/photo-1508849789987-4e5333c12b78?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=993");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.influencers-intro {
+    padding: 20rem 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("https://images.unsplash.com/photo-1585621228923-bc748618a89b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=775");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
 /* ===============================================
     Define Homepage About Style
 =============================================== */
+.about-influencers {
+    background-color: #f5f8fa;
+}
+
 .about-container {
     display: grid;
     grid-template-columns: 45rem 45rem;
@@ -663,7 +718,11 @@ h6 {
     Define Homepage Top Brands Style
 =============================================== */
 .top-brands {
-    background-color: #00253A !important;
+    background-color: #00253a !important;
+}
+
+.all-brands {
+    background-color: #f5f8fa !important;
 }
 
 .cards {
@@ -678,13 +737,13 @@ h6 {
 .card {
     position: relative;
     display: block;
-    height: 100%;  
+    height: 100%;
     border-radius: calc(40 * 1px);
     overflow: hidden;
     text-decoration: none;
 }
 
-.card__image {      
+.card__image {
     width: 100%;
     height: 30rem;
     background-position: center; /* Center the image */
@@ -697,11 +756,11 @@ h6 {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1;      
-    border-radius: calc(40 * 1px);    
-    background-color: #fff;      
+    z-index: 1;
+    border-radius: calc(40 * 1px);
+    background-color: #fff;
     transform: translateY(100%);
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .card:hover .card__overlay {
@@ -714,10 +773,10 @@ h6 {
     align-items: center;
     gap: 2em;
     padding: 1em;
-    border-radius: calc(40 * 1px) 0 0 0;    
+    border-radius: calc(40 * 1px) 0 0 0;
     background-color: #fff;
     transform: translateY(-100%);
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .card__arc {
@@ -725,14 +784,14 @@ h6 {
     height: 80px;
     position: absolute;
     bottom: 100%;
-    right: 0;      
+    right: 0;
     z-index: 1;
 }
 
 .card__arc path {
     fill: #fff;
     d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
-}       
+}
 
 .card:hover .card__header {
     transform: translateY(0);
@@ -741,19 +800,19 @@ h6 {
 .card__thumb {
     flex-shrink: 0;
     width: 50px;
-    height: 50px;      
-    border-radius: 50%;      
+    height: 50px;
+    border-radius: 50%;
 }
 
 .card__title {
-    color: #017DC3;
+    color: #017dc3;
 }
 
 .card__tagline {
     display: block;
     margin: 0.5rem 0;
-    font-family: "MockFlowFont";  
-    font-size: .8em; 
+    font-family: "MockFlowFont";
+    font-size: 0.8em;
 }
 
 .card__status {
@@ -764,7 +823,7 @@ h6 {
 .card__description {
     padding: 0 2em 2em;
     margin: 0;
-    font-family: "MockFlowFont";   
+    font-family: "MockFlowFont";
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
@@ -789,12 +848,12 @@ h6 {
     background: #fff;
     margin: 0 auto;
     border-radius: 4px;
-    box-shadow:0 2px 10px rgba(0,0,0,.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .card-influencer:before,
 .card-influencer:after {
-    content:"";
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -808,12 +867,12 @@ h6 {
 
 .card-influencer:hover:before {
     transform: rotate(20deg);
-    box-shadow: 0 2px 20px rgba(0,0,0,.2);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card-influencer:hover:after {
     transform: rotate(10deg);
-    box-shadow: 0 2px 20px rgba(0,0,0,.2);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
 .influencer-photo {
@@ -831,7 +890,7 @@ h6 {
     bottom: 80px;
 }
 
-.influencer-photo img{
+.influencer-photo img {
     position: absolute;
     top: 0;
     left: 0;
@@ -855,4 +914,4 @@ h6 {
     color: #a67c18;
     display: block;
     margin-top: 1rem;
-} 
+}

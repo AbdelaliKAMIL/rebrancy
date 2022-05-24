@@ -1,4 +1,4 @@
-<?php $title = 'Rebrancy - Sign up'; ?>
+<?php $title = "Rebrancy - S'incrire"; ?>
 
 <?php ob_start(); ?>
 <?php $header = ob_get_clean(); ?>

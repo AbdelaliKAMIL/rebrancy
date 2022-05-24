@@ -30,7 +30,7 @@ $influencers = $influencerController->getFewInfluencers();
                 <h2 class="text-primary">Collaborez avec les meilleures marques</h2>
                 <p>Rebrancy aide les influenceurs Instagram et YouTube à s'associer avec des marques leaders pour recevoir des produits gratuits en échange d'un contenu authentique.</p>
                 <div class="about-btn">
-                    <a class="btn btn-lg-secondary" href="#">Commencer maintenant</a>
+                    <a class="btn btn-lg-secondary" href="#top-brands">Commencer maintenant</a>
                 </div>
             </div>
             <div class="about-image">
@@ -39,11 +39,11 @@ $influencers = $influencerController->getFewInfluencers();
         </div>
     </div>
 </section>
-<section class="section top-brands">
+<section id="top-brands" class="section top-brands">
     <div class="row">
         <div class="col span-2-of-2 text-center">
-            <h2 class="text-secondary">Connect with brands</h2>
-            <h5 class="section-subtitle text-white">Rebrancy's platform helps influencers connect with brands for free products, sponsorships, paid campaigns, and more.</p>
+            <h2 class="text-secondary">Connectez-vous aves les marques</h2>
+            <h5 class="section-subtitle text-white">La plate-forme de Rebrancy aide les influenceurs à se connecter avec les marques pour des produits gratuits, des parrainages, des campagnes payantes, etc.</p>
         </div>
     </div>
     <div class="row">
@@ -74,14 +74,14 @@ $influencers = $influencerController->getFewInfluencers();
     </div>
     <div class="row">
         <div class="col span-2-of-2 text-center">
-            <a class="btn btn-light" href="../brand/brandList.php?action=showBrands">Voir plus</a>
+            <a class="btn btn-light" href="<?php echo 'http://localhost/rebrancy/'; ?>brands">Voir plus</a>
         </div>
     </div>
 </section>
 <section class="section top-influencers">
     <div class="row">
         <div class="col span-2-of-2 text-center">
-            <h2 class="text-primary">Connect with influencers</h2>
+            <h2 class="text-primary">Connectez-vous avec les influenceurs</h2>
             <h5 class="section-subtitle">Outreach influencers to develop credibility and raise awareness for your brand or product</p>
         </div>
     </div>
@@ -102,7 +102,7 @@ $influencers = $influencerController->getFewInfluencers();
         </div>
         <div class="row">
             <div class="col span-2-of-2 text-center">
-                <a class="btn btn-secondary" href="../brand/brandList.php?action=showInfluencers">Voir plus</a>
+                <a class="btn btn-secondary" href="<?php echo 'http://localhost/rebrancy/'; ?>influencers">Voir plus</a>
             </div>
         </div>
 </section>

@@ -2,6 +2,11 @@
 
 class InfluencerController
 {
+    public function router($page)
+    {
+        include('views/influencer/' . $page . '.php');
+    }
+
     public function getAllInfluencers()
     {
         $influencers = Influencer::getAll();

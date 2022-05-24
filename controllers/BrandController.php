@@ -2,6 +2,11 @@
 
 class BrandController
 {
+    public function router($page)
+    {
+        include('views/brand/' . $page . '.php');
+    }
+
     public function getAllBrands()
     {
         $brands = Brand::getAll();

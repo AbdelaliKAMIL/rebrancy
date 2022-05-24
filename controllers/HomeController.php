@@ -2,7 +2,7 @@
 
 class HomeController
 {
-    public function index($page)
+    public function router($page)
     {
         include('views/home/' . $page . '.php');
     }
