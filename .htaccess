@@ -1,4 +1,4 @@
 Options All -Indexes
 RewriteEngine On
 RewriteBase /rebrancy/
-RewriteRule ^([-a-zA-Z0-9]+)$ views/home/index.php
+RewriteRule ^([-a-zA-Z0-9]+)$ index.php?page=$1

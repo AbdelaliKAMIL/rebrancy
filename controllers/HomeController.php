@@ -2,10 +2,8 @@
 
 class HomeController
 {
-    public function homepage()
+    public function index($page)
     {
-        $brands = Brand::getFew();
-
-        include('views/home/index.php');
+        include('views/home/' . $page . '.php');
     }
 }

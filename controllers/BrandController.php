@@ -1,5 +1,4 @@
 <?php
-include('./models/Brand.php');
 
 class BrandController
 {

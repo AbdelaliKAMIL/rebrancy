@@ -1,27 +1,69 @@
 <?php
-// Chargement des classes
-require_once('../models/InfluencerManager.php');
 
-function influencerList()
+class InfluencerController
 {
-    $influencerManager = new InfluencerManager(); // Création d'un objet
-    $influencers = $influencerManager->getInfluencers(); // Appel d'une fonction de cet objet
+    public function getAllInfluencers()
+    {
+        $influencers = Influencer::getAll();
 
-    require('influencer/influencerList.php');
-}
+        return $influencers;
+    }
 
-function influencerTopList()
-{
-    $influencerManager = new InfluencerManager();
-    $influencers = $influencerManager->getTopInfluencers();
+    public function getFewInfluencers()
+    {
+        $influencers = Influencer::getFew();
 
-    require('home/index.php');
-}
+        return $influencers;
+    }
 
-function influencer()
-{
-    $influencerManager = new InfluencerManager();
-    $influencer = $influencerManager->getInfluencerById($_GET['id']);
+    public function getInfluencer($id)
+    {
+        $influencer = Influencer::getById($id);
 
-    require('influencer/influencerDetail.php');
+        return $influencer;
+    }
+
+    public function addInfluencer()
+    {
+        if (isset($_POST['submit'])) {
+            $data = array(
+                'name' => $_POST['name'],
+                'description' => $_POST['description'],
+                'industry' => $_POST['industry'],
+                'logo' => $_POST['logo'],
+                'image' => $_POST['image'],
+                'turnover' => $_POST['turnover']
+            );
+
+            $isCreatedSuccessfully = Influencer::create($data);
+
+            if ($isCreatedSuccessfully) {
+                header('location:http://localhost/Rebrancy2/');
+            } else {
+                echo 'Erreur lors de la création de la marque.';
+            }
+        }
+    }
+
+    public function editInfluencer()
+    {
+        if (isset($_POST['submit'])) {
+            $data = array(
+                'name' => $_POST['name'],
+                'description' => $_POST['description'],
+                'industry' => $_POST['industry'],
+                'logo' => $_POST['logo'],
+                'image' => $_POST['image'],
+                'turnover' => $_POST['turnover']
+            );
+
+            $isUpdatedSuccessfully = Influencer::update($data);
+
+            if ($isUpdatedSuccessfully) {
+                header('location:http://localhost/Rebrancy2/');
+            } else {
+                echo 'Erreur lors de la modification de la marque.';
+            }
+        }
+    }
 }

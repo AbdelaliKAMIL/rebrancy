@@ -1,13 +1,14 @@
 <?php
-require_once '../../controllers/BrandController.php';
 $brandController = new BrandController;
+$influencerController = new InfluencerController;
 $brands = $brandController->getFewBrands();
+$influencers = $influencerController->getFewInfluencers();
 ?>
 
 <?php $title = 'Rebrancy Home'; ?>
 
 <?php ob_start(); ?>
-<?php require('../header.php'); ?>
+<?php require('./views/header.php'); ?>
 <?php $header = ob_get_clean(); ?>
 
 <?php ob_start(); ?>
@@ -17,7 +18,7 @@ $brands = $brandController->getFewBrands();
             <div class="hero-text-box">
                 <h1 style="margin-bottom: 4rem; color: white">Un écosystème où les marques et les influenceurs se rencontrent</h1>
                 <a class="btn btn-lg-light" href="#">Je suis une marque</a>
-                <a class="btn btn-lg-secondary ml-5" href="#">Je suis un influenceur</a>
+                <a class="btn btn-lg-secondary ml-5" href="<?php echo 'http://localhost/rebrancy/'; ?>sign-up">Je suis un influenceur</a>
             </div>
         </div>
     </div>
@@ -51,13 +52,13 @@ $brands = $brandController->getFewBrands();
                 <?php foreach ($brands as $brand) : ?>
                     <li>
                         <a href="" class="card">
-                            <img src="<?php echo $brand['image']; ?>" class="card__image" alt="" />
+                            <img src="public/img/brands/<?php echo $brand['image']; ?>" class="card__image" alt="" />
                             <div class="card__overlay">
                                 <div class="card__header">
                                     <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
                                         <path />
                                     </svg>
-                                    <img class="card__thumb" src="<?php echo $brand['logo']; ?>" alt="" />
+                                    <img class="card__thumb" src="public/img/brands/<?php echo $brand['logo']; ?>" alt="" />
                                     <div class="card__header-text">
                                         <h5 class="card__title"><?php echo $brand['name']; ?></h5>
                                         <span class="card__status"><?php echo $brand['industry']; ?></span>
@@ -87,54 +88,16 @@ $brands = $brandController->getFewBrands();
     <div class="row">
         <div class="col span-2-of-2">
             <div class="box-influencers">
-                <div class="card-influencer">
-                    <div class="influencer-photo">
-                        <img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
+                <?php foreach ($influencers as $influencer) : ?>
+                    <div class="card-influencer">
+                        <div class="influencer-photo">
+                            <img src="public/img/influencers/<?php echo $influencer['photo']; ?>" alt="Influencer Photo">
+                        </div>
+                        <div class="influencer-details">
+                            <h5 class="text-primary"><?php echo $influencer['firstname'] . ' ' . $influencer['lastname']; ?><br><span><?php echo $influencer['function']; ?></span></h5>
+                        </div>
                     </div>
-                    <div class="influencer-details">
-                        <h5 class="text-primary">SomeOne Famous<br><span>Digital Marketing Creator</span></h5>
-                    </div>
-                </div>
-                <div class="card-influencer">
-                    <div class="influencer-photo">
-                        <img src="https://images.unsplash.com/photo-1549417229-aa67d3263c09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
-                    </div>
-                    <div class="influencer-details">
-                        <h2>SomeOne Famous<br><span>Producer</span></h2>
-                    </div>
-                </div>
-                <div class="card-influencer">
-                    <div class="influencer-photo">
-                        <img src="https://images.unsplash.com/photo-1548094878-84ced0f6896d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
-                    </div>
-                    <div class="influencer-details">
-                        <h2>SomeOne Famous<br><span>Actor</span></h2>
-                    </div>
-                </div>
-                <div class="card-influencer">
-                    <div class="influencer-photo">
-                        <img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
-                    </div>
-                    <div class="influencer-details">
-                        <h2>SomeOne Famous<br><span>Director</span></h2>
-                    </div>
-                </div>
-                <div class="card-influencer">
-                    <div class="influencer-photo">
-                        <img src="https://images.unsplash.com/photo-1549417229-aa67d3263c09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
-                    </div>
-                    <div class="influencer-details">
-                        <h2>SomeOne Famous<br><span>Producer</span></h2>
-                    </div>
-                </div>
-                <div class="card-influencer">
-                    <div class="influencer-photo">
-                        <img src="https://images.unsplash.com/photo-1548094878-84ced0f6896d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
-                    </div>
-                    <div class="influencer-details">
-                        <h2>SomeOne Famous<br><span>Actor</span></h2>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
         <div class="row">
@@ -146,8 +109,8 @@ $brands = $brandController->getFewBrands();
 <?php $content = ob_get_clean(); ?>
 
 <?php ob_start(); ?>
-<?php require('../footer.php'); ?>
+<?php require('./views/footer.php'); ?>
 <?php $footer = ob_get_clean(); ?>
 
 
-<?php require('../template.php'); ?>
+<?php require('./views/template.php'); ?>
