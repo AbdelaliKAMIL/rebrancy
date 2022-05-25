@@ -30,22 +30,30 @@ class BrandController
 
     public function addBrand()
     {
-        if (isset($_POST['submit'])) {
-            $data = array(
-                'name' => $_POST['name'],
-                'description' => $_POST['description'],
-                'industry' => $_POST['industry'],
-                'logo' => $_POST['logo'],
-                'image' => $_POST['image'],
-                'turnover' => $_POST['turnover']
-            );
+        if (isset($_POST['email']) && isset($_POST['password'])) {
+            if ($_POST['password'] == $_POST['confirmPassword']) {
+                $email = $_POST['email'];
+                $password = $_POST['password'];
 
-            $isCreatedSuccessfully = Brand::create($data);
+                User::create($email, $password);
 
-            if ($isCreatedSuccessfully) {
-                header('location:http://localhost/Rebrancy2/');
+                $data = array(
+                    'name' => $_POST['name'],
+                    'description' => $_POST['description'],
+                    'industry' => $_POST['industry'],
+                    'turnover' => $_POST['turnover'],
+                    'user_id' => 25
+                );
+
+                $isCreatedSuccessfully = Brand::create($data);
+
+                if ($isCreatedSuccessfully) {
+                    header('location:http://localhost/rebrancy/');
+                } else {
+                    echo 'Erreur lors de la création de la marque.';
+                }
             } else {
-                echo 'Erreur lors de la création de la marque.';
+                echo '<script>alert("Veuillez confirmer votre password correctement!")</script>';
             }
         }
     }

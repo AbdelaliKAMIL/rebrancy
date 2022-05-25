@@ -32,15 +32,14 @@ class Brand
 
     static public function create($data)
     {
-        $stmt = Database::connect()->prepare("INSERT INTO brands (name, description, industry, logo, image, turnover)
-        VALUES(:name, :description, :industry, :logo, :image, :turnover)");
+        $stmt = Database::connect()->prepare("INSERT INTO brands (name, description, industry, turnover, user_id)
+        VALUES(:name, :description, :industry, :turnover, :user_id)");
 
         $stmt->bindParam(':name', $data['name']);
         $stmt->bindParam(':description', $data['description']);
         $stmt->bindParam(':industry', $data['industry']);
-        $stmt->bindParam(':logo', $data['logo']);
-        $stmt->bindParam(':image', $data['image']);
         $stmt->bindParam(':turnover', $data['turnover']);
+        $stmt->bindParam(':user_id', $data['user_id']);
 
         $isCreatedSuccessfully = $stmt->execute();
 

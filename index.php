@@ -6,6 +6,7 @@ require_once './controllers/HomeController.php';
 $homeController = new HomeController();
 $brandController = new BrandController();
 $influencerController = new InfluencerController();
+$userController = new UserController();
 
 $homePages = ['index', 'sign-up-brand', 'sign-up-influencer', 'sign-in'];
 $brandPages = ['brands'];
@@ -21,6 +22,9 @@ if (isset($_GET['page'])) {
     } elseif (in_array($_GET['page'], $influencerPages)) {
         $page = $_GET['page'];
         $influencerController->router($page);
+    } elseif ($_GET['page'] == 'login') {
+        $page = $_GET['page'];
+        $userController->login();
     }
 } else {
     $homeController->router('index');

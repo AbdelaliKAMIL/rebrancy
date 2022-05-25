@@ -387,6 +387,42 @@ header {
 }
 
 /* ===============================================
+    Define Footer Style
+=============================================== */
+.footer {
+    background-color: #212529;
+}
+
+.footer-container { 
+    display: grid;
+    grid-template-columns: 45rem 20rem 20rem;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.footer-about-header {
+    color: #f5f8fa;
+    margin-bottom: 1.5rem;
+}
+
+.footer-about-content {
+    color: #f5f8fa;
+    font-size: 1.3rem;
+}
+
+.footer-links {
+    text-decoration: none;
+    list-style: none;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #f5f8fa;
+    font-size: 1.3rem;
+}
+
+
+/* ===============================================
     Define Sign-up & Sign-in Style
 =============================================== */
 .section-sign-up {

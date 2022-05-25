@@ -1,3 +1,8 @@
+<?php
+$userController = new UserController;
+$userController->login();
+?>
+
 <?php $title = 'Rebrancy - Se connecter'; ?>
 
 <?php ob_start(); ?>
@@ -13,7 +18,7 @@
                 </div>
                 <div class="row clearfix">
                     <div class="">
-                        <form action="../php/register.php" method="post">
+                        <form action="" method="post">
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
                                 <input type="email" name="email" placeholder="Adresse email" />
                             </div>
@@ -22,7 +27,7 @@
                             </div>
                             <input class="button" type="submit" value="Se connecter" />
                             <p class="credit">Vous n'avez pas un compte ?</p>
-                            <p class="credit"><a href="<?php echo 'http://localhost/rebrancy/'; ?>sign-up-brand" target="_blank">S'inscrire en tant qu'une marque</a> ou <a href="<?php echo 'http://localhost/rebrancy/'; ?>sign-up-influencer" target="_blank">S'inscrire en tant qu'un influenceur</a></p>
+                            <p class="credit"><a href="sign-up-brand">S'inscrire en tant qu'une marque</a> ou <a href="sign-up-influencer">S'inscrire en tant qu'un influenceur</a></p>
                         </form>
                     </div>
                 </div>

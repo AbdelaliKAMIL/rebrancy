@@ -74,7 +74,7 @@ $influencers = $influencerController->getFewInfluencers();
     </div>
     <div class="row">
         <div class="col span-2-of-2 text-center">
-            <a class="btn btn-light" href="<?php echo 'http://localhost/rebrancy/'; ?>brands">Voir plus</a>
+            <a class="btn btn-light" href="brands">Voir plus</a>
         </div>
     </div>
 </section>
@@ -82,7 +82,7 @@ $influencers = $influencerController->getFewInfluencers();
     <div class="row">
         <div class="col span-2-of-2 text-center">
             <h2 class="text-primary">Connectez-vous avec les influenceurs</h2>
-            <h5 class="section-subtitle">Outreach influencers to develop credibility and raise awareness for your brand or product</p>
+            <h5 class="section-subtitle">Communiquez avec des influenceurs pour développer votre crédibilité et faire connaître votre marque ou votre produit</p>
         </div>
     </div>
     <div class="row">
