@@ -2,13 +2,11 @@
 
 class User
 {
-    static public function authenticate($email, $password)
+    static public function authenticate($email)
     {
-        $password_hashed = password_hash($password, PASSWORD_DEFAULT);
-
         try {
-            $stmt = Database::connect()->prepare('SELECT * FROM users WHERE email = :email AND password = :password');
-            $stmt->execute(array(':email' => $email, ':password' => $password_hashed));
+            $stmt = Database::connect()->prepare('SELECT * FROM users WHERE email = :email');
+            $stmt->execute(array(':email' => $email));
             $user = $stmt->fetch(PDO::FETCH_OBJ);
             return $user;
         } catch (Exception $exception) {
@@ -16,26 +14,26 @@ class User
         }
     }
 
-    static public function create($email, $password)
+    static public function create($email, $password, $role)
     {
-        $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+        try {
+            $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 
-        $stmt = Database::connect()->prepare("INSERT INTO users (email, password)
-        VALUES(:email, :password)");
+            $stmt = Database::connect()->prepare("INSERT INTO users (email, password, role)
+            VALUES(:email, :password, :role)");
 
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $password_hashed);
-        // $stmt->bindParam(':role', 'BRAND');
-        echo "Tout ce passe bien.";
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':password', $password_hashed);
+            $stmt->bindParam(':role', $role);
 
-        $isCreatedSuccessfully = $stmt->execute();
+            $stmt->execute();
 
-        if ($isCreatedSuccessfully) {
-            try {
-                echo "New record created successfully. Last inserted ID is: ";
-            } catch (PDOException $exception) {
-                echo 'Erreur lors de la création de la marque : ' . $exception->getMessage();
-            }
+            $stmt = Database::connect()->prepare('SELECT * FROM  users WHERE email = :email');
+            $stmt->execute(array(":email" => $email));
+            $user = $stmt->fetch(PDO::FETCH_OBJ);
+            return $user;
+        } catch (PDOException $exception) {
+            echo 'Erreur lors de la création de l\'utilisateur : ' . $exception->getMessage();
         }
     }
 }

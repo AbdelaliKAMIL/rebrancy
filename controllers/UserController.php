@@ -6,14 +6,20 @@ class UserController
         if (isset($_POST['email']) && isset($_POST['password'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
+            //$password_hashed = password_hash($password, PASSWORD_DEFAULT);
+            $userConnected = User::authenticate($email);
 
-            $userConnected = User::authenticate($email, $password);
+            if ($userConnected->password === $password) {
+                session_start();
+                $_SESSION['userID'] = $userConnected->id;
 
-            session_start();
-            $_SESSION["userID"] = $userConnected;
-
-            if ($userConnected != NULL) {
-                header('location:http://localhost/rebrancy/');
+                if ($userConnected->role === 'BRAND') {
+                    header('location:http://localhost/rebrancy/brand-profile');
+                } elseif ($userConnected->role === 'INFLUENCER') {
+                    header('location:http://localhost/rebrancy/influencer-profile');
+                } else {
+                    header('location:http://localhost/rebrancy/');
+                }
             } else {
                 header('location:http://localhost/rebrancy/sign-in');
             }

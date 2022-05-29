@@ -21,9 +21,9 @@ class BrandController
         return $brands;
     }
 
-    public function getBrand($id)
+    public function getBrand($userID)
     {
-        $brand = Brand::getById($id);
+        $brand = Brand::getById($userID);
 
         return $brand;
     }
@@ -34,15 +34,16 @@ class BrandController
             if ($_POST['password'] == $_POST['confirmPassword']) {
                 $email = $_POST['email'];
                 $password = $_POST['password'];
+                $role = 'BRAND';
 
-                User::create($email, $password);
+                $user = User::create($email, $password, $role);
 
                 $data = array(
                     'name' => $_POST['name'],
                     'description' => $_POST['description'],
                     'industry' => $_POST['industry'],
                     'turnover' => $_POST['turnover'],
-                    'user_id' => 25
+                    'user_id' => $user->id
                 );
 
                 $isCreatedSuccessfully = Brand::create($data);

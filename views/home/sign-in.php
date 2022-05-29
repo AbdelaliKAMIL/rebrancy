@@ -20,10 +20,10 @@ $userController->login();
                     <div class="">
                         <form action="" method="post">
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                                <input type="email" name="email" placeholder="Adresse email" />
+                                <input type="email" name="email" placeholder="Adresse email" required />
                             </div>
                             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                                <input type="password" name="password" placeholder="Mot de passe" />
+                                <input type="password" name="password" placeholder="Mot de passe" required />
                             </div>
                             <input class="button" type="submit" value="Se connecter" />
                             <p class="credit">Vous n'avez pas un compte ?</p>

@@ -9,8 +9,8 @@ $influencerController = new InfluencerController();
 $userController = new UserController();
 
 $homePages = ['index', 'sign-up-brand', 'sign-up-influencer', 'sign-in'];
-$brandPages = ['brands'];
-$influencerPages = ['influencers'];
+$brandPages = ['brands', 'brand-profile'];
+$influencerPages = ['influencers', 'influencer-profile'];
 
 if (isset($_GET['page'])) {
     if (in_array($_GET['page'], $homePages)) {
@@ -23,7 +23,6 @@ if (isset($_GET['page'])) {
         $page = $_GET['page'];
         $influencerController->router($page);
     } elseif ($_GET['page'] == 'login') {
-        $page = $_GET['page'];
         $userController->login();
     }
 } else {

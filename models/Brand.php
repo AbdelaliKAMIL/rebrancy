@@ -18,11 +18,11 @@ class Brand
         return $results;
     }
 
-    static public function getById($id)
+    static public function getById($userID)
     {
         try {
-            $stmt = Database::connect()->prepare('SELECT * FROM  brands WHERE id=:id');
-            $stmt->execute(array(":id" => $id));
+            $stmt = Database::connect()->prepare('SELECT * FROM  brands WHERE user_id = :user_id');
+            $stmt->execute(array(":user_id" => $userID));
             $brand = $stmt->fetch(PDO::FETCH_OBJ);
             return $brand;
         } catch (PDOException $exception) {
@@ -44,11 +44,9 @@ class Brand
         $isCreatedSuccessfully = $stmt->execute();
 
         if ($isCreatedSuccessfully) {
-            try {
-                return true;
-            } catch (PDOException $exception) {
-                echo 'Erreur lors de la création de la marque : ' . $exception->getMessage();
-            }
+            return true;
+        } else {
+            echo 'Erreur lors de la création de la marque au niveau de la base de données.';
         }
     }
 

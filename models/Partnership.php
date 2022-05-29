@@ -4,29 +4,33 @@ class Influencer
 {
     static public function getAll()
     {
-        $stmt = Database::connect()->prepare('SELECT * FROM influencers');
+        $stmt = Database::connect()->prepare('SELECT * FROM partnerships');
         $stmt->execute();
         $results = $stmt->fetchAll();
         return $results;
     }
 
-    static public function getFew()
-    {
-        $stmt = Database::connect()->prepare('SELECT * FROM influencers LIMIT 6');
-        $stmt->execute();
-        $results = $stmt->fetchAll();
-        return $results;
-    }
-
-    static public function getById($userID)
+    static public function getByBrand($brandID)
     {
         try {
-            $stmt = Database::connect()->prepare('SELECT * FROM  influencers WHERE user_id = :user_id');
-            $stmt->execute(array(":user_id" => $userID));
-            $influencer = $stmt->fetch(PDO::FETCH_OBJ);
-            return $influencer;
+            $stmt = Database::connect()->prepare('SELECT * FROM  partnerships WHERE brand_id = :brand_id');
+            $stmt->execute(array(":brand_id" => $brandID));
+            $results = $stmt->fetchAll();
+            return $results;
         } catch (PDOException $exception) {
-            echo 'Erreur lors de la récupération de l\'influenceur : ' . $exception->getMessage();
+            echo 'Erreur lors de la récupération des partenariats de la marque : ' . $exception->getMessage();
+        }
+    }
+
+    static public function getByInfluencer($influencerID)
+    {
+        try {
+            $stmt = Database::connect()->prepare('SELECT * FROM  partnerships WHERE influencer_id = :influencer_id');
+            $stmt->execute(array(":influencer_id" => $influencerID));
+            $results = $stmt->fetchAll();
+            return $results;
+        } catch (PDOException $exception) {
+            echo 'Erreur lors de la récupération des partenariats de l\'influenceur : ' . $exception->getMessage();
         }
     }
 
@@ -82,7 +86,7 @@ class Influencer
 
     static public function delete($id)
     {
-        $stmt = Database::connect()->prepare('DELETE FROM  influencer WHERE id=:id');
+        $stmt = Database::connect()->prepare('DELETE FROM  partnerships WHERE id=:id');
 
         $isDeletedSuccessfully = $stmt->execute(array(":id" => $id));
 
@@ -90,7 +94,7 @@ class Influencer
             try {
                 return true;
             } catch (PDOException $exception) {
-                echo 'Erreur lors de la suppression de l\'influenceur : ' . $exception->getMessage();
+                echo 'Erreur lors de la suppression du partenariat : ' . $exception->getMessage();
             }
         }
     }

@@ -112,8 +112,52 @@
     margin-right: 0.4rem;
 }
 
-.mr-5 {
+.mb-5 {
     margin-right: 0.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.2rem;
+}
+
+.mb-3 {
+    margin-bottom: 0.3rem;
+}
+
+.mb-4 {
+    margin-bottom: 0.4rem;
+}
+
+.mb-5 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-20 {
+    margin-bottom: 2rem;
+}
+
+.mb-30 {
+    margin-bottom: 3rem;
+}
+
+.mt-2 {
+    margin-top: 0.2rem;
+}
+
+.mt-3 {
+    margin-top: 0.3rem;
+}
+
+.mt-4 {
+    margin-top: 0.4rem;
+}
+
+.mt-5 {
+    margin-top: 0.5rem;
+}
+
+.mt-30 {
+    margin-top: 3rem;
 }
 
 /* ===============================================
@@ -173,15 +217,19 @@ h4 {
 }
 
 h5 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 1.8rem;
     font-family: "Poppins";
 }
 
 h6 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.6rem;
     font-family: "Poppins";
+}
+
+.text-small {
+    font-size: 1.4rem;
 }
 
 /* ===============================================
@@ -725,6 +773,17 @@ header {
     background-attachment: fixed;
 }
 
+.brand-profile-intro,
+.influencer-profile-intro {
+    padding: 10rem 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("https://images.unsplash.com/photo-1494253109108-2e30c049369b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
 /* ===============================================
     Define Homepage About Style
 =============================================== */
@@ -950,4 +1009,322 @@ header {
     color: #a67c18;
     display: block;
     margin-top: 1rem;
+}
+
+/* ===============================================
+    Define Influencer Profile Style
+=============================================== */
+.influencer-profile {
+    position: relative;
+    width: 20rem;
+    height: 22rem;
+    background: #fff;
+    margin: 0 auto 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.influencer-profile-photo {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+    background: #222;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.influencer-profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.influencer-profile-about {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 2rem 3rem;
+}
+
+/* ===============================================
+    Define Profile Body Style
+=============================================== */
+.profile-section {
+    padding: 2rem 4rem;
+}
+
+.profile-body-container {
+    display: grid;
+    grid-template-columns:  25rem 80rem;
+    gap: 2rem;
+    margin: 4rem 5vw;
+    padding: 0;
+}
+
+.profile-sidebar {
+    padding: .2rem .2rem;
+    background-color: #017dc3;
+    border-radius: 5px;
+}
+
+.sidebar-list {
+    list-style: none;
+}
+
+.sidebar-item {   
+    background-color: white;
+    border: 1px solid #e9ecef;
+    padding: .8rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sidebar-link {
+    text-decoration: none;
+    color: #017dc3;    
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    display: block;
+}
+
+.sidebar-item:hover {
+    background: #017dc3;   
+}
+
+.sidebar-item:hover .sidebar-link {
+    color: white;
+}
+
+.profile-content {
+    background-color: #f5f8fa !important;
+    padding: .2rem .2rem;
+    border-radius: 5px;
+}
+
+.profile-content h5 {
+    color: white;
+    background-color: #017dc3 !important;
+    text-decoration: none;
+    padding: 1rem 1rem;
+    border-radius: 5px;
+}
+
+.profile-indicators {
+    display: grid;
+    grid-template-columns:  25rem 25rem 25rem;
+    gap: .5rem;
+    margin: 1rem 3vw;
+    padding: 0;
+}
+
+.indicator-card {
+    position: relative;
+    background-color: white;
+    width: 22rem;
+    height: 22rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border-radius: 5px;
+}
+.indicator-content {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align : center;
+}
+
+/* ===============================================
+    Define Form Style
+=============================================== */
+.form-group:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 10rem 45rem;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.form-label {
+    position: absolute;
+    color: #495057;
+    font-size: 1.4rem;
+    padding: 1rem .5rem;
+    font-weight: 600;
+    text-align: right;
+}
+
+
+.form-input {
+    font-size: 1.4rem;
+    width: 100%;
+    padding: 1rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 3px;
+    outline: none;
+}
+
+.change-password-link {
+    font-size: 1.4rem;
+    color: #017dc3 !important;
+}
+/*
+        &:hover {
+            border: 1px solid $color-grey-50-light;
+        }
+
+        &:focus {
+            border: 1px solid $color-grey-50-light;
+            border-bottom: 2px solid $color-primary;
+        }
+
+        &:focus:invalid {
+            border-bottom: 3px solid $color-secondary;
+        }
+
+        &::-webkit-input-placeholder {
+            font-size: $font-size-small;
+            color: $color-primary;
+            font-weight: 600;
+            opacity: .6;
+            transition: ease-in .2s;
+        }
+
+        &--tag {
+            width: 100%;
+            padding: 0rem 1rem;
+            outline: none;
+        }
+    }
+
+    &__input[type="color"] {
+        -webkit-appearance: none;
+        padding: 0;
+        width: 6rem;
+        height: 90%;
+    }
+
+    &__input[type="checkbox"] {
+        visibility: hidden;
+
+        &:before {
+            content: "\00a0";
+            visibility: visible;
+            display: inline-block;
+            position: relative;
+            top: 85%;
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid $color-grey-25-light;
+            border-radius: 3px;
+            margin-bottom: 0.2rem;
+        }
+
+        &:checked:before {
+            content: "\2713";
+            color: white;
+            font-size: $font-size-xsmall;
+            font-weight: 700;
+            text-align :center;
+
+            background-color: $color-primary;
+        }
+    }
+
+    &__select {
+        font-size: $font-size-small;
+        border: 1px solid $color-grey-25-light;
+        border-radius: 3px;
+        padding: .8rem 1rem;
+        width: 100%;
+        outline: none;
+
+        & option:focus {
+            background-color: grey;
+        }
+
+        &:hover {
+            border: 1px solid $color-grey-50-light;
+        }
+
+        &:focus {
+            border: 1px solid $color-grey-50-light;
+            border-bottom: 2px solid $color-primary;
+        }
+
+    }
+
+    &__input[type="file"] {
+        background-color: green;
+        outline: none;
+        opacity: 0;
+        position: absolute;
+    }
+
+    &__drag-file-area {
+        color: $color-primary;
+        font-size: $font-size-small;
+        text-align: center;
+        width: 100%;
+        padding: 1rem 1rem;
+        border: 2px dotted $color-primary;
+        border-radius: 3px;
+    }
+
+    &__img {
+        width: 100%;
+        border: 1px solid $color-grey-25-light;
+        border-radius: 3px;
+    }
+
+    &__output {
+        width: 100%;
+        height: 20rem;
+        border: 1px solid $color-grey-25-light;
+        border-radius: 3px;
+
+        &--empty {
+            color: $color-secondary-25-dark;
+            text-align: center;
+        }
+
+        &--display {
+            //width: 100%;
+        }
+    }
+}
+*/
+
+/* ===============================================
+    Define Table Style
+=============================================== */
+.profile-table {
+    margin: 0 2rem;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid #017dc3 !important;
+}
+
+th {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: .8rem 0.4rem;
+}
+
+td {
+    font-size: 1.4rem;
+    padding: .7rem 0.4rem;
+}
+
+table {
+    background-color: white;
 }

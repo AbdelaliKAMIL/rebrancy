@@ -75,7 +75,7 @@ VALUES ("Coca-Cola",
 "Mercedes-Benz est un constructeur allemand d'automobiles (modèles premium, de sport et de luxe), de camions, d'autocars et d'autobus indépendant fondé en 1926.",
 "Automobile",
 "mercedes-logo.png",
-"mercedes.jfif",
+"mercedes.jpg",
 169000000000,
 4),
 
@@ -107,16 +107,28 @@ photo VARCHAR(255),
 facebook VARCHAR(255),
 instagram VARCHAR(255),
 youtube VARCHAR(255),
-snapshot VARCHAR(255),
+snapchat VARCHAR(255),
 user_id INT NOT NULL,
 PRIMARY KEY (id),
 FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-INSERT INTO influencers (firstname, lastname, nickname, age, function, photo, facebook, instagram, youtube, snapshot, user_id)
+INSERT INTO influencers (firstname, lastname, nickname, age, function, photo, facebook, instagram, youtube, snapchat, user_id)
 VALUES ("Jamie", "Oliver", "Jammy", 24, "Digital Marketing Creator", "jamieoliver.jpg", "@jamieoliver", "@jamieoliver", "@jamieoliver", "@jamieoliver", 13),
 ("David", "Chang", "Davi", 30, "Content Creative Marketer", "davidchang.jpg", "@davidchang", "@davidchang", "@davidchang", "@davidchang", 14),
 ("Chiara", "Ferragni", "Ragni", 27, "Graphic Designer Manager", "chiaraferragni.jpg", "@chiaraferragni", "@chiaraferragni", "@chiaraferragni", "@chiaraferragni", 15),
 ("Alexa", "Chung", "Lexa", 23, "Film Maker", "alexachung.jpg", "@alexachung", "@alexachung", "@alexachung", "@alexachung", 16),
 ("Murad", "Osmann", "Moro", 26, "Brand Advertising Manager", "muradosmann.jpg", "@muradosmann", "@muradosmann", "@muradosmann", "@muradosmann", 17),
 ("Jimmy", "Chin", "Jichi", 25, "Director & Producer", "jimmychin.jpg", "@jimmychin", "@jimmychin", "@jimmychin", "@jimmychin", 18);
+
+CREATE TABLE IF NOT EXISTS partnerships(
+id INT NOT NULL AUTO_INCREMENT,
+brand_id INT NOT NULL,
+influencer_id INT NOT NULL,
+agreement_terms TEXT,
+amount_paid DECIMAL,
+contract_duration INT,
+PRIMARY KEY (id),
+FOREIGN KEY (brand_id) REFERENCES brands(id),
+FOREIGN KEY (influencer_id) REFERENCES influencers(id)
+);
