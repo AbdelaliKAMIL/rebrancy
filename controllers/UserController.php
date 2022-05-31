@@ -30,4 +30,9 @@ class UserController
         unset($_SESSION['userID']);
         header('location:http://localhost/rebrancy/');
     }
+
+    public function getUserRole($userID) {
+        $userRole = User::getRole($userID);
+        return $userRole;
+    }
 }
