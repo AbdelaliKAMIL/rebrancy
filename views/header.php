@@ -1,7 +1,9 @@
 <?php
 $userController = new UserController;
-$userID = $_SESSION['userID'];
-$userRole = $userController->getUserRole($userID);
+if(isset($_SESSION['userID'])){
+    $userID = $_SESSION['userID'];
+    $userRole = $userController->getUserRole($userID);
+}
 ?>
 <header class="header">
     <nav class="nav">

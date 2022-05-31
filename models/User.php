@@ -48,4 +48,16 @@ class User
             echo 'Erreur lors de la récupération du rôle de l\'utilisateur : ' . $exception->getMessage();
         }
     }
+
+    static public function getById($userID)
+    {
+        try {
+            $stmt = Database::connect()->prepare('SELECT * FROM users WHERE id = :id');
+            $stmt->execute(array(":id" => $userID));
+            $user = $stmt->fetch(PDO::FETCH_OBJ);
+            return $user;
+        } catch (PDOException $exception) {
+            echo 'Erreur lors de la récupération de l\'utilisateur : ' . $exception->getMessage();
+        }
+    }
 }

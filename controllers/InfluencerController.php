@@ -64,24 +64,28 @@ class InfluencerController
         }
     }
 
-    public function editInfluencer()
+    public function editInfluencer($userID)
     {
         if (isset($_POST['submit'])) {
             $data = array(
-                'name' => $_POST['name'],
-                'description' => $_POST['description'],
-                'industry' => $_POST['industry'],
-                'logo' => $_POST['logo'],
-                'image' => $_POST['image'],
-                'turnover' => $_POST['turnover']
+                'firstname' => $_POST['firstname'],
+                'lastname' => $_POST['lastname'],
+                'nickname' => $_POST['nickname'],
+                'age' => $_POST['age'],
+                'function' => $_POST['function'],
+                'facebook' => $_POST['facebook'],
+                'instagram' => $_POST['instagram'],
+                'snapchat' => $_POST['snapchat'],
+                'youtube' => $_POST['youtube'],
+                'user_id' => $userID
             );
 
             $isUpdatedSuccessfully = Influencer::update($data);
 
             if ($isUpdatedSuccessfully) {
-                header('location:http://localhost/Rebrancy2/');
+                header('location:http://localhost/rebrancy/influencer-profile');
             } else {
-                echo 'Erreur lors de la modification de la marque.';
+                echo 'Erreur lors de la modification de l\'influenceur.';
             }
         }
     }

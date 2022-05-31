@@ -35,4 +35,11 @@ class UserController
         $userRole = User::getRole($userID);
         return $userRole;
     }
+
+    public function getUser($userID)
+    {
+        $user = User::getById($userID);
+
+        return $user;
+    }
 }

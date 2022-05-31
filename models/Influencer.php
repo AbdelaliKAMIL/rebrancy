@@ -57,7 +57,9 @@ class Influencer
 
     static public function update($data)
     {
-        $stmt = Database::connect()->prepare('UPDATE influencers SET firstname:firstname, lastname:lastname, nickname:nickname, age:age, function:function, photo:photo, facebook:facebook, instagram:instagram, youtube:youtube, snapshot:snapshot WHERE id=:id');
+        $stmt = Database::connect()->prepare('UPDATE influencers SET firstname:firstname, lastname:lastname, 
+        nickname:nickname, age:age, function:function, photo:photo, facebook:facebook, instagram:instagram, 
+        youtube:youtube, snapchat:snapchat WHERE user_id=:user_id');
 
         $stmt->bindParam(':firstname', $data['firstname']);
         $stmt->bindParam(':lastname', $data['lastname']);
@@ -68,6 +70,7 @@ class Influencer
         $stmt->bindParam(':instagram', $data['instagram']);
         $stmt->bindParam(':youtube', $data['youtube']);
         $stmt->bindParam(':snapchat', $data['snapchat']);
+        $stmt->bindParam(':user_id', $data['user_id']);
 
         $isUpdatedSuccessfully = $stmt->execute();
 

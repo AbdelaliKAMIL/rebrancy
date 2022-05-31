@@ -13,7 +13,8 @@ class Partnership
     static public function getByBrand($brandID)
     {
         try {
-            $stmt = Database::connect()->prepare('SELECT * FROM  partnerships WHERE brand_id = :brand_id');
+            $stmt = Database::connect()->prepare('SELECT *, influencer.firstname as influencer_firstname, influencer.lastname as influencer_lastname FROM  partnerships inner join users on users.id = partnerships.influencer_id 
+            inner join influencers on influencers.user_id = users.id WHERE brand_id = :brand_id');
             $stmt->execute(array(":brand_id" => $brandID));
             $results = $stmt->fetchAll();
             return $results;
@@ -32,6 +33,54 @@ class Partnership
             return $results;
         } catch (PDOException $exception) {
             echo 'Erreur lors de la récupération des partenariats de l\'influenceur : ' . $exception->getMessage();
+        }
+    }
+
+    static public function countByBrand($brandID)
+    {
+        try {
+            $stmt = Database::connect()->prepare('SELECT count(*) as count_partnerships from partnerships WHERE brand_id = :brand_id');
+            $stmt->execute(array(":brand_id" => $brandID));
+            $results = $stmt->fetch(PDO::FETCH_OBJ);
+            return $results->count_partnerships;
+        } catch (PDOException $exception) {
+            echo 'Erreur lors de la récupération du nombre total des partenariats de la marque : ' . $exception->getMessage();
+        }
+    }
+
+    static public function countByInfluencer($influencerID)
+    {
+        try {
+            $stmt = Database::connect()->prepare('SELECT count(*) as count_partnerships from partnerships WHERE influencer_id = :influencer_id');
+            $stmt->execute(array(":influencer_id" => $influencerID));
+            $results = $stmt->fetch(PDO::FETCH_OBJ);
+            return $results->count_partnerships;
+        } catch (PDOException $exception) {
+            echo 'Erreur lors de la récupération du nombre total des partenariats de l\'influenceur : ' . $exception->getMessage();
+        }
+    }
+
+    static public function sumByBrand($brandID)
+    {
+        try {
+            $stmt = Database::connect()->prepare('SELECT SUM(amount_paid) as sum_amounts_paid from partnerships WHERE brand_id = :brand_id');
+            $stmt->execute(array(":brand_id" => $brandID));
+            $results = $stmt->fetch(PDO::FETCH_OBJ);
+            return $results->sum_amounts_paid;
+        } catch (PDOException $exception) {
+            echo 'Erreur lors de la récupération du nombre total des montants versés par la marque : ' . $exception->getMessage();
+        }
+    }
+
+    static public function sumByInfluencer($influencerID)
+    {
+        try {
+            $stmt = Database::connect()->prepare('SELECT SUM(amount_paid) as sum_amounts_paid from partnerships WHERE influencer_id = :influencer_id');
+            $stmt->execute(array(":influencer_id" => $influencerID));
+            $results = $stmt->fetch(PDO::FETCH_OBJ);
+            return $results->sum_amounts_paid;
+        } catch (PDOException $exception) {
+            echo 'Erreur lors de la récupération du nombre total des montants versés de l\'influenceur : ' . $exception->getMessage();
         }
     }
 

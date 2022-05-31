@@ -1,21 +1,23 @@
 <?php
+$userController = new UserController;
 $influencerController = new InfluencerController;
 $partnershipController = new PartnershipController;
 
-$profileID = $_GET['id'];
 $userID = $_SESSION['userID'];
-if($profileID == $userID || $profileID == NULL) {
-    $influencer = $influencerController->getInfluencer($userID);
-    $isOwnProfile = true;
-} else {
-    $influencer = $influencerController->getInfluencer($profileID);
-    $isOwnProfile = false;
+$influencer = $influencerController->getInfluencer($userID);
+
+if(!isset($_SESSION['userID'])){
+    header("location: sign-in");
 }
 
+$user = $userController->getUser($userID);
+$influencerController->editInfluencer($userID);
 $partnerships = $partnershipController->getPartnershipsByInfluencer($userID);
+$countPartnerships = $partnershipController->countPartnershipsByInfluencer($userID);
+$sumAmountsPaid = $partnershipController->sumAmountsPaidByInfluencer($userID);
 ?>
 
-<?php $title = 'Rebrancy - Soukaina Abouzine'; ?>
+<?php $title = 'Rebrancy'; ?>
 
 <?php ob_start(); ?>
 <?php require('./views/header.php'); ?>
@@ -53,7 +55,7 @@ $partnerships = $partnershipController->getPartnershipsByInfluencer($userID);
                     <li class="sidebar-item"><button class="sidebar-link" onclick="openTab('dashboard')">Tableaux de bord</button></li>
                 </ul>
             </div>
-            <div id="profile" class="profile-content tab inactive">
+            <div id="profile" class="profile-content tab">
                 <form action="" method="post">
                     <div class="">
                         <h5 class="profile-title mb-20">Informations de base</h5>
@@ -117,7 +119,7 @@ $partnerships = $partnershipController->getPartnershipsByInfluencer($userID);
                     <div class="form-group mb-30">
                         <div><label class="form-label">Email</label></div>
                         <div>
-                            <input class="form-input" type="email" name="email" placeholder="Email" value="<?php echo $influencer->snapchat; ?>" required />
+                            <input class="form-input" type="email" name="email" placeholder="Email" value="<?php echo $user->email; ?>" required />
                         </div>
                     </div>
                     <div class="form-group mb-30">
@@ -132,13 +134,28 @@ $partnerships = $partnershipController->getPartnershipsByInfluencer($userID);
                 </form>
             </div>
             <div id="messenger" class="profile-content tab inactive">
-                <div class="">
-                    <div>
-                        <h5 class="profile-title mb-20">Messagerie</h5>
+                <div>
+                    <h5 class="profile-title mb-20">Messagerie</h5>
+                </div>
+                <div class="profile-messenger">
+                    <div class="messenger-list">
+                        <div class="users-list">
+  
+                        </div>
+                    </div>
+                    <div class="messenger-body">
+                        <div class="chat-box">
+
+                        </div>
+                        <form action="#" class="typing-area">
+                            <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
+                            <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
+                            <button><i class="fa fa-telegram"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div id="partnership" class="profile-content tab">
+            <div id="partnership" class="profile-content tab inactive">
                 <div class="">
                     <div>
                         <h5 class="profile-title mb-20">Mes partenariats</h5>
@@ -173,19 +190,19 @@ $partnerships = $partnershipController->getPartnershipsByInfluencer($userID);
                     <div class="indicator-card">
                         <div class="indicator-content">
                             <h6 class="text-primary">Nombre Total de partenariats</h6>
-                            <p class="indicator-value">3</p>
+                            <p class="indicator-value"><?php echo $countPartnerships; ?></p>
                         </div>
                     </div>
                     <div class="indicator-card">
                         <div class="indicator-content">
                             <h6 class="text-primary">Nombre Total de marques contactées</h6>
-                            <p class="indicator-value">3</p>
+                            <p class="indicator-value">4</p>
                         </div>
                     </div>
                     <div class="indicator-card">
                         <div class="indicator-content">
                             <h6 class="text-primary">Total des montants versés</h6>
-                            <p class="indicator-value">3</p>
+                            <p class="indicator-value"><?php echo $sumAmountsPaid; ?></p>
                         </div>
                     </div>
                 </div>
@@ -213,6 +230,8 @@ $partnerships = $partnershipController->getPartnershipsByInfluencer($userID);
         document.getElementById(section).style.display = "block";
     }
 </script>
+<script src="public/js//users.js"></script>
+<script src="public/js/chat.js"></script>
 <?php $footer = ob_get_clean(); ?>
 
 <?php require('./views/template.php'); ?>

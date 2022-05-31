@@ -219,3 +219,10 @@ VALUES (1, 13, "1.	Les parties
 13.	Règlement des différends"
 , 175000, 18);
 
+CREATE TABLE IF NOT EXISTS messages (
+id INT NOT NULL AUTO_INCREMENT,
+incoming_msg_id int(255) NOT NULL,
+outgoing_msg_id int(255) NOT NULL,
+message varchar(1000) NOT NULL,
+PRIMARY KEY (id)
+);

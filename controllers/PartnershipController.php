@@ -23,6 +23,34 @@ class PartnershipController
         return $partnerships;
     }
 
+    public function countPartnershipsByInfluencer($influencerID)
+    {
+        $countPartnerships = Partnership::countByBrand($influencerID);
+
+        return $countPartnerships;
+    }
+
+    public function countPartnershipsByBrand($brandID)
+    {
+        $countPartnerships = Partnership::countByBrand($brandID);
+
+        return $countPartnerships;
+    }
+
+    public function sumAmountsPaidByInfluencer($influencerID)
+    {
+        $sumAmountsPaid = Partnership::sumByInfluencer($influencerID);
+
+        return $sumAmountsPaid;
+    }
+
+    public function sumAmountsPaidByBrand($brandID)
+    {
+        $sumAmountsPaid = Partnership::sumByBrand($brandID);
+
+        return $sumAmountsPaid;
+    }
+    
     public function addBrand()
     {
         if (isset($_POST['email']) && isset($_POST['password'])) {
