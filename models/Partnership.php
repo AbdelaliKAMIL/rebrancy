@@ -25,7 +25,8 @@ class Partnership
     static public function getByInfluencer($influencerID)
     {
         try {
-            $stmt = Database::connect()->prepare('SELECT * FROM  partnerships WHERE influencer_id = :influencer_id');
+            $stmt = Database::connect()->prepare('SELECT *, brands.name as brand_name FROM  partnerships inner join users on users.id = partnerships.brand_id 
+            inner join brands on brands.user_id = users.id WHERE influencer_id = :influencer_id');
             $stmt->execute(array(":influencer_id" => $influencerID));
             $results = $stmt->fetchAll();
             return $results;

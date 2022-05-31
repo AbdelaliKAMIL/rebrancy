@@ -151,16 +151,14 @@ $partnerships = $partnershipController->getPartnershipsByInfluencer($userID);
                                 <th>Termes de l'accord</th>
                                 <th>Montant Versé (MAD)</th>
                                 <th>Durée du contract (mois)</th>
-                                <th></th>
                             </tr>
                             <?php foreach ($partnerships as $partnership) : ?>
                                 <tr>
-                                    <td><?php echo $partnership['id']; ?></td>
-                                    <td><?php echo $partnership['brand_id']; ?></td>
-                                    <td><?php echo $partnership['agreement_terms']; ?></td>
-                                    <td><?php echo $partnership['amount_paid']; ?></td>
-                                    <td><?php echo $partnership['contract_duration']; ?></td>
-                                    <td></td>
+                                    <td class="text-center"><?php echo $partnership['id']; ?></td>
+                                    <td class="text-left"><?php echo $partnership['brand_name']; ?></td>
+                                    <td class="text-left"><?php echo $partnership['agreement_terms']; ?></td>
+                                    <td class="text-right"><?php echo $partnership['amount_paid']; ?></td>
+                                    <td class="text-right"><?php echo $partnership['contract_duration']; ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </table>

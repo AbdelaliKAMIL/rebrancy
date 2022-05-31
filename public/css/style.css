@@ -81,6 +81,14 @@
     text-align: center;
 }
 
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
 /* ===============================================
     Define Margins and Paddings
 =============================================== */
@@ -1327,7 +1335,7 @@ header {
     Define Table Style
 =============================================== */
 .profile-table {
-    margin: 0 2rem;
+    margin: 0 2rem 2rem;
     width: block;
 }
 
