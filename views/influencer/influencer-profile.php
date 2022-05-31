@@ -1,7 +1,18 @@
 <?php
-$userID = $_SESSION['userID'];
 $influencerController = new InfluencerController;
-$influencer = $influencerController->getInfluencer($userID);
+$partnershipController = new PartnershipController;
+
+$profileID = $_GET['id'];
+$userID = $_SESSION['userID'];
+if($profileID == $userID || $profileID == NULL) {
+    $influencer = $influencerController->getInfluencer($userID);
+    $isOwnProfile = true;
+} else {
+    $influencer = $influencerController->getInfluencer($profileID);
+    $isOwnProfile = false;
+}
+
+$partnerships = $partnershipController->getPartnershipsByInfluencer($userID);
 ?>
 
 <?php $title = 'Rebrancy - Soukaina Abouzine'; ?>
@@ -21,10 +32,12 @@ $influencer = $influencerController->getInfluencer($userID);
                     </div>
                 </div>
                 <h5 class="text-white mt-5"><?php echo $influencer->firstname . ' ' . $influencer->lastname; ?><h5>
-                        <h6 class="text-secondary"><?php echo $influencer->function; ?><h6>
-                                <p class="influencer-profile-about">La plate-forme de Rebrancy aide les influenceurs à se connecter avec les marques pour des produits gratuits, des parrainages, des campagnes payantes, etc.</p>
-                                <a class="btn btn-light mt-5" href="#top-brands">Edit Profile</a>
-                                <a class="btn btn-secondary mt-5" href="#top-brands">Message</a>
+                <h6 class="text-secondary"><?php echo $influencer->function; ?><h6>
+                <p class="influencer-profile-about">La plate-forme de Rebrancy aide les influenceurs à se connecter avec les marques pour des produits gratuits, des parrainages, des campagnes payantes, etc.</p>
+                
+                <a class="btn btn-light mt-5" href="#top-brands">Edit Profile</a>
+                
+                <a class="btn btn-secondary mt-5" href="#top-brands">Message</a>
             </div>
         </div>
     </div>
@@ -125,13 +138,12 @@ $influencer = $influencerController->getInfluencer($userID);
                     </div>
                 </div>
             </div>
-            <div id="partnership" class="profile-content tab inactive">
+            <div id="partnership" class="profile-content tab">
                 <div class="">
                     <div>
                         <h5 class="profile-title mb-20">Mes partenariats</h5>
                     </div>
                     <div class="profile-table">
-                        <button>Ajouter un partenariat</button>
                         <table>
                             <tr>
                                 <th>Code Partenariat</th>
@@ -141,31 +153,43 @@ $influencer = $influencerController->getInfluencer($userID);
                                 <th>Durée du contract (mois)</th>
                                 <th></th>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Coca-Cola</td>
-                                <td>Peter</td>
-                                <td>400000</td>
-                                <td>24</td>
-                                <td>24</td>
-                            </tr>
+                            <?php foreach ($partnerships as $partnership) : ?>
+                                <tr>
+                                    <td><?php echo $partnership['id']; ?></td>
+                                    <td><?php echo $partnership['brand_id']; ?></td>
+                                    <td><?php echo $partnership['agreement_terms']; ?></td>
+                                    <td><?php echo $partnership['amount_paid']; ?></td>
+                                    <td><?php echo $partnership['contract_duration']; ?></td>
+                                    <td></td>
+                                </tr>
+                            <?php endforeach; ?>
                         </table>
                     </div>
                 </div>
             </div>
-            <div id="dashboard" class="profile-content tab">
+            <div id="dashboard" class="profile-content tab inactive">
                 <div>
                     <h5 class="profile-title mb-20">Mes indicateurs</h5>
                 </div>
                 <div class="profile-indicators">
                     <div class="indicator-card">
                         <div class="indicator-content">
-                            <h6 class="text-primary">Nombre Total de partenariats<h6>
-                                    <p>3</p>
+                            <h6 class="text-primary">Nombre Total de partenariats</h6>
+                            <p class="indicator-value">3</p>
                         </div>
                     </div>
-                    <div class=" indicator-card">CARD 2</div>
-                    <div class="indicator-card">CARD 3</div>
+                    <div class="indicator-card">
+                        <div class="indicator-content">
+                            <h6 class="text-primary">Nombre Total de marques contactées</h6>
+                            <p class="indicator-value">3</p>
+                        </div>
+                    </div>
+                    <div class="indicator-card">
+                        <div class="indicator-content">
+                            <h6 class="text-primary">Total des montants versés</h6>
+                            <p class="indicator-value">3</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

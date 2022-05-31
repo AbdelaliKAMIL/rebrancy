@@ -132,3 +132,90 @@ PRIMARY KEY (id),
 FOREIGN KEY (brand_id) REFERENCES brands(id),
 FOREIGN KEY (influencer_id) REFERENCES influencers(id)
 );
+
+INSERT INTO partnerships (brand_id, influencer_id, agreement_terms, amount_paid, contract_duration)
+VALUES (1, 13, "1.	Les parties
+2.	Documents contractuels et validité
+3.	Prix et paiement
+4.	Exécution du contrat
+5.	Cession et sous-traitance
+6.	Droits de propriété intellectuelle et confidentialité
+7.	Conduite éthique
+8.	Divulgation intégrale
+9.	Retards, force majeure et dommages-intérêts forfaitaires
+10.	Résiliation
+11.	Garanties
+12.	Dispositions diverses
+13.	Règlement des différends"
+, 300000, 24),
+(2, 13, "1.	Les parties
+2.	Documents contractuels et validité
+3.	Prix et paiement
+4.	Exécution du contrat
+5.	Cession et sous-traitance
+6.	Droits de propriété intellectuelle et confidentialité
+7.	Conduite éthique
+8.	Divulgation intégrale
+9.	Retards, force majeure et dommages-intérêts forfaitaires
+10.	Résiliation
+11.	Garanties
+12.	Dispositions diverses
+13.	Règlement des différends"
+, 450000, 36),
+(3, 13, "1.	Les parties
+2.	Documents contractuels et validité
+3.	Prix et paiement
+4.	Exécution du contrat
+5.	Cession et sous-traitance
+6.	Droits de propriété intellectuelle et confidentialité
+7.	Conduite éthique
+8.	Divulgation intégrale
+9.	Retards, force majeure et dommages-intérêts forfaitaires
+10.	Résiliation
+11.	Garanties
+12.	Dispositions diverses
+13.	Règlement des différends"
+, 200000, 12),
+(1, 14, "1.	Les parties
+2.	Documents contractuels et validité
+3.	Prix et paiement
+4.	Exécution du contrat
+5.	Cession et sous-traitance
+6.	Droits de propriété intellectuelle et confidentialité
+7.	Conduite éthique
+8.	Divulgation intégrale
+9.	Retards, force majeure et dommages-intérêts forfaitaires
+10.	Résiliation
+11.	Garanties
+12.	Dispositions diverses
+13.	Règlement des différends"
+, 150000, 16),
+(2, 14, "1.	Les parties
+2.	Documents contractuels et validité
+3.	Prix et paiement
+4.	Exécution du contrat
+5.	Cession et sous-traitance
+6.	Droits de propriété intellectuelle et confidentialité
+7.	Conduite éthique
+8.	Divulgation intégrale
+9.	Retards, force majeure et dommages-intérêts forfaitaires
+10.	Résiliation
+11.	Garanties
+12.	Dispositions diverses
+13.	Règlement des différends"
+, 250000, 20),
+(3, 15, "1.	Les parties
+2.	Documents contractuels et validité
+3.	Prix et paiement
+4.	Exécution du contrat
+5.	Cession et sous-traitance
+6.	Droits de propriété intellectuelle et confidentialité
+7.	Conduite éthique
+8.	Divulgation intégrale
+9.	Retards, force majeure et dommages-intérêts forfaitaires
+10.	Résiliation
+11.	Garanties
+12.	Dispositions diverses
+13.	Règlement des différends"
+, 175000, 18)
+

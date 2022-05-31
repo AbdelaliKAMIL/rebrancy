@@ -1,6 +1,6 @@
 <?php
 
-class Influencer
+class Partnership
 {
     static public function getAll()
     {

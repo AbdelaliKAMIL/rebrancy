@@ -47,22 +47,20 @@ $influencers = $influencerController->getAllInfluencers();
         <div class="col span-2-of-2">
             <div class="box-influencers">
                 <?php foreach ($influencers as $influencer) : ?>
-                    <div class="card-influencer">
-                        <div class="influencer-photo">
-                            <img src="public/img/influencers/<?php echo $influencer['photo']; ?>" alt="Influencer Photo">
+                    <a href="influencer-profile?id=<?php echo $influencer['id'];?>">
+                        <div class="card-influencer">
+                            <div class="influencer-photo">
+                                <img src="public/img/influencers/<?php echo $influencer['photo']; ?>" alt="Influencer Photo">
+                            </div>
+                            <div class="influencer-details">
+                                <h5 class="text-primary"><?php echo $influencer['firstname'] . ' ' . $influencer['lastname']; ?><br><span><?php echo $influencer['function']; ?></span></h5>
+                            </div>
                         </div>
-                        <div class="influencer-details">
-                            <h5 class="text-primary"><?php echo $influencer['firstname'] . ' ' . $influencer['lastname']; ?><br><span><?php echo $influencer['function']; ?></span></h5>
-                        </div>
-                    </div>
+                    </a>
                 <?php endforeach; ?>
             </div>
         </div>
-        <div class="row">
-            <div class="col span-2-of-2 text-center">
-                <a class="btn btn-secondary" href="../brand/brandList.php?action=showInfluencers">Voir plus</a>
-            </div>
-        </div>
+    </div>
 </section>
 
 <?php $content = ob_get_clean(); ?>

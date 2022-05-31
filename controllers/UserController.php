@@ -6,7 +6,6 @@ class UserController
         if (isset($_POST['email']) && isset($_POST['password'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
-            //$password_hashed = password_hash($password, PASSWORD_DEFAULT);
             $userConnected = User::authenticate($email);
 
             if ($userConnected->password === $password) {
@@ -24,5 +23,11 @@ class UserController
                 header('location:http://localhost/rebrancy/sign-in');
             }
         }
+    }
+
+    public function logout()
+    {
+        unset($_SESSION['userID']);
+        header('location:http://localhost/rebrancy/');
     }
 }

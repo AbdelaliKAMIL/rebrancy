@@ -24,6 +24,8 @@ if (isset($_GET['page'])) {
         $influencerController->router($page);
     } elseif ($_GET['page'] == 'login') {
         $userController->login();
+    } elseif ($_GET['page'] == 'logout') {
+        $userController->logout();
     }
 } else {
     $homeController->router('index');
