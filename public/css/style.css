@@ -1,14 +1,38 @@
-/* Core files */
-@import "/rebrancy/public/css/core/base.css";
-@import "/rebrancy/public/css/core/typography.css";
+/* ===============================================
+    Define Base Style
+=============================================== */
+* {
+    margin: 0;
+    padding: 0;
+}
 
-/* Layout files */
-@import "/rebrancy/public/css/layout/footer.css";
-@import "/rebrancy/public/css/layout/header.css";
+*,
+*::after,
+*::before {
+    box-sizing: inherit
+}
 
-/* Pages files */
-@import "/rebrancy/public/css/pages/home/index.css";
-@import "/rebrancy/public/css/pages/brand/brand-list.css";
+html {
+    box-sizing: border-box;
+    /* This defines what 1rem is */
+    font-size: 62.5%; /* 1rem = 10px; 10px/16px = 62.5% */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #495057;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 0 10rem;
+}
+
+#app {
+    min-height: 100vh;
+}
 
 /* ===============================================
     Define Grid System
